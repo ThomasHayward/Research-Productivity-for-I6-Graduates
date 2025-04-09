@@ -1,0 +1,17 @@
+sources -> pubmed, scopus, mbase, Cochrane, google scholar, icite
+
+Different name permeations:
+    Doe JM
+    Doe J
+    Doe, J.M.
+    Doe, J.
+    Jane M. Doe
+    J. M. Doe
+    Jane Marie Doe
+    Jane Doe
+    J. Doe
+    Doe, Jane
+    Doe, Jane Marie
+    J.Doe
+
+   
