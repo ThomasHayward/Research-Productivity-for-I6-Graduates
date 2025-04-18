@@ -8,7 +8,7 @@ from utils.select_functions import (insert_if_not_exists, insert_into_table,
 
 def connect_to_db():
     try:
-        return pyodbc.connect('DRIVER={MySQL ODBC 9.2 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
+        return pyodbc.connect('DRIVER={MySQL ODBC 9.3 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
     except pyodbc.Error as e:
         print(f"Error connecting to MySQL: {e}")
         exit(1)
@@ -56,8 +56,8 @@ def process_row(conn, row):
 
         # Handle resident insertion
         duration = row['Grad_year'] - row['Match_year']
-        med_school_research = duration - 6
-        residency_research = (med_school_research - 1 if med_school_research > 1 else 0)
+        med_school_research = 0
+        residency_research = duration - 6
 
         # Get required IDs using select_with_condition which now returns results directly
         residency_result = select_with_condition(cursor, TABLES["RESIDENCY"], 

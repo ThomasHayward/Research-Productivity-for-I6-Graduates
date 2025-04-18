@@ -5,7 +5,7 @@ from utils.constants import TABLES
 def clean_database():
     try:
         # Connect to the database
-        conn = pyodbc.connect('DRIVER={MySQL ODBC 9.2 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
+        conn = pyodbc.connect('DRIVER={MySQL ODBC 9.3 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
         cursor = conn.cursor()
 
         # Delete in reverse order of dependencies using TABLES constant

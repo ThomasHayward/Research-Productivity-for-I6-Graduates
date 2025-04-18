@@ -10,7 +10,7 @@ from utils.selectFunctions import (insert_if_not_exists, select_from_table,
 
 # Connect to the MySQL database
 try:
-    conn = pyodbc.connect('DRIVER={MySQL ODBC 9.2 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
+    conn = pyodbc.connect('DRIVER={MySQL ODBC 9.3 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
 except pyodbc.Error as e:
     print(f"Error connecting to MySQL: {e}")
     exit(1)
