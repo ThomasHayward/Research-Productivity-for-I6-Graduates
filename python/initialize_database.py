@@ -2,10 +2,8 @@ import pandas as pd
 import pyodbc
 from utils.constants import (FELLOWSHIP, MEDICAL_SCHOOL, POST_RESIDENCY_CAREER,
                              RESIDENCY, RESIDENT, TABLES)
-
-from python.utils.select_functions import (insert_if_not_exists,
-                                           insert_into_table,
-                                           select_with_condition)
+from utils.select_functions import (insert_if_not_exists, insert_into_table,
+                                    select_with_condition)
 
 
 def connect_to_db():
