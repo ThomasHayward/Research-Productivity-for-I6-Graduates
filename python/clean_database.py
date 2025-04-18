@@ -43,8 +43,9 @@ def clean_database():
             conn.close()
 
 if __name__ == "__main__":
-    response = input("This will delete ALL data from the database. Are you sure? (yes/no): ")
-    if response.lower() == 'yes':
-        clean_database()
-    else:
-        print("Database cleanup cancelled")
+    # response = input("This will delete ALL data from the database. Are you sure? (yes/no): ")
+    # if response.lower() == 'yes':
+    #     clean_database()
+    # else:
+    #     print("Database cleanup cancelled")
+    clean_database()

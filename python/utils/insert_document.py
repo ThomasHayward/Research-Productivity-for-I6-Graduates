@@ -9,8 +9,23 @@ def find_author_in_authors_list(author, authors):
     """
     Given an author and list of authors, return the index of the author in the list.
     """
+    def get_middle_initial(val):
+        # Accepts None, '', or full middle name, returns first letter upper or ''
+        if not val:
+            return ''
+        return val[0].upper()
+
+    author_first = (getattr(author, 'first_name', '') or '').strip().lower()
+    author_last = (getattr(author, 'last_name', '') or '').strip().lower()
+    author_mi = get_middle_initial(getattr(author, 'middle_name', None) or getattr(author, 'middle_initial', None) or '')
     for i, a in enumerate(authors):
-        if a["firstname"] == author.first_name and a["lastname"] == author.last_name:
+        first_match = (a.get("firstname", "") or "").strip().lower() == author_first
+        last_match = (a.get("lastname", "") or "").strip().lower() == author_last
+        # Try to get middle initial from dict, could be 'middlename', 'middleinitial', or 'middle'
+        a_mi = get_middle_initial(a.get("middlename", None) or a.get("middleinitial", None) or a.get("middle", None) or '')
+        # If either has no middle initial, ignore it; else, require match
+        mi_match = (not author_mi or not a_mi) or (author_mi == a_mi)
+        if first_match and last_match and mi_match:
             return i
     return -1
 
@@ -20,7 +35,6 @@ def get_author_ordership_from_list(author, authors):
     Given a list of authors and author, return the order of authorship.
     """
     author_index = find_author_in_authors_list(author, authors)
-    print(f"Author index: {author_index}")
     
     if author_index == -1:
         return 'unknown'
@@ -50,6 +64,12 @@ def insert_pubmed_full_article(cursor, resident, article, database):
         # print(f"  Date: {article.publication_date}")
         # print(f"  DOI: {article.doi}")
         # print("---")
+
+        author_indx = find_author_in_authors_list(resident, article.authors)
+        if author_indx == -1:
+            # print(f"Author not found in authors list for article: {article.title}")
+            return
+
         journal_id = insert_pubmed_article_single_table(cursor, TABLES["JOURNAL"], 
             insert_fields={JOURNAL["NAME"]: article.journal})
         # print(f"Journal ID: {journal_id}")
@@ -62,10 +82,6 @@ def insert_pubmed_full_article(cursor, resident, article, database):
             }, 
             conditions={PUBLICATION["TOPIC"]: article.title})
         # print(f"Publication ID: {publication_id}")
-        author_indx = find_author_in_authors_list(resident, article.authors)
-        if author_indx == -1:
-            # print(f"Author not found in authors list for article: {article.title}")
-            return
         
         # Get author affiliation, use empty string if not found
         author_affiliation = ''

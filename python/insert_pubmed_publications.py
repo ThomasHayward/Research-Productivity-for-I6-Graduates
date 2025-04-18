@@ -1,6 +1,10 @@
+import logging
+import time
+from functools import wraps
 from gettext import find
 
 import pyodbc
+import requests
 from pymed import PubMed
 from utils.constants import (AUTHOR, AUTHOR_PUBLICATION, FELLOWSHIP, JOURNAL,
                              MEDICAL_SCHOOL, POST_RESIDENCY_CAREER,
@@ -17,6 +21,47 @@ except pyodbc.Error as e:
     exit(1)
 
 pubmed = PubMed(tool="Integrated resident project", email="thomas-hayward@outlook.com")
+
+def retry_on_error(max_retries=3, delay=1):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            retries = 0
+            while retries < max_retries:
+                try:
+                    return func(*args, **kwargs)
+                except pyodbc.Error as e:
+                    retries += 1
+                    if retries == max_retries:
+                        logging.error(f"Failed after {max_retries} attempts: {str(e)}")
+                        raise
+                    logging.warning(f"Database error, attempt {retries}/{max_retries}: {str(e)}")
+                    time.sleep(delay)
+            return None
+        return wrapper
+    return decorator
+
+def retry_pubmed_query(pubmed, query, max_retries=3, base_delay=5):
+    for attempt in range(max_retries):
+        try:
+            # Exponential backoff delay
+            if attempt > 0:
+                delay = base_delay * (2 ** (attempt - 1))
+                logging.info(f"Waiting {delay} seconds before retry {attempt + 1}/{max_retries}")
+                time.sleep(delay)
+            
+            return pubmed.query(query, max_results=5000)
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 429:
+                logging.warning(f"Rate limit hit, attempt {attempt + 1}/{max_retries}")
+                if attempt == max_retries - 1:
+                    logging.error("Max retries reached for rate limit")
+                    raise
+                continue
+            raise
+        except Exception as e:
+            logging.error(f"Unexpected error querying PubMed: {str(e)}")
+            raise
 
 def namePermeatations(name):
     """
@@ -95,8 +140,14 @@ for resident in residents:
     
     # Create and execute PubMed query
     query = createQueryString(name_variations, resident.match_year, resident.grad_year)
-    results = pubmed.query(query, max_results=5000)
-    
+    try:
+        results = retry_pubmed_query(pubmed, query)
+        # Add a small delay between different residents to avoid rate limits
+        time.sleep(2)
+    except Exception as e:
+        logging.error(f"Failed to query PubMed for resident {resident.full_name}: {str(e)}")
+        continue
+
     for idx, article in enumerate(results, 1):
         # Safely check fields using getattr first
         journal = getattr(article, 'journal', None)
@@ -116,13 +167,14 @@ for resident in residents:
         missing_fields = [field for field, value in required_fields.items() if not value]
         
         if missing_fields:
-            # print the artcile
-            # print(f"Article {idx} that is missing fields: {article}")
+            # logging.warning(f"Skipping article {idx} due to missing fields: {missing_fields}")
             continue
-
-       
-        insert_pubmed_full_article(cursor=cursor, article=article, resident=resident, database='pubmed')
         
+        try:
+            retry_on_error()(insert_pubmed_full_article)(cursor=cursor, article=article, resident=resident, database='pubmed')
+        except Exception as e:
+            logging.error(f"Failed to insert article {idx}: {str(e)}")
+            continue
 
 cursor.close()
 conn.close()
