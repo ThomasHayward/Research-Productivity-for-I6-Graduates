@@ -1,4 +1,5 @@
 import pyodbc
+from utils.constants import TABLES
 
 
 def clean_database():
@@ -7,16 +8,21 @@ def clean_database():
         conn = pyodbc.connect('DRIVER={MySQL ODBC 9.2 ANSI Driver};SERVER=localhost;DATABASE={integrated_resident_project};UID=admin;')
         cursor = conn.cursor()
 
-        # Delete in reverse order of dependencies
-        tables = [
-            'resident',              # Delete residents first (they depend on everything)
-            'post_residency_career', # Then delete the reference tables
-            'fellowship',
-            'medical_school',
-            'residency'
+        # Delete in reverse order of dependencies using TABLES constant
+        tables_to_clean = [
+            TABLES["RESIDENT"],              # Delete residents first (they depend on everything)
+            TABLES["POST_RESIDENCY_CAREER"], # Then delete the reference tables
+            TABLES["FELLOWSHIP"],
+            TABLES["MEDICAL_SCHOOL"],
+            TABLES["RESIDENCY"],
+            TABLES["AUTHOR_PUBLICATION"],
+            TABLES["AUTHOR"],
+            TABLES["PUBLICATION"],
+            TABLES["JOURNAL"],
+            TABLES["GRANT"],
         ]
 
-        for table in tables:
+        for table in tables_to_clean:
             try:
                 cursor.execute(f"DELETE FROM {table}")
                 cursor.execute(f"ALTER TABLE {table} AUTO_INCREMENT = 1")

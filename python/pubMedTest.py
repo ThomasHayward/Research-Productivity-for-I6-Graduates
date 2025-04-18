@@ -1,5 +1,12 @@
+from gettext import find
+
 import pyodbc
 from pymed import PubMed
+from utils.constants import (AUTHOR, AUTHOR_PUBLICATION, FELLOWSHIP, JOURNAL,
+                             MEDICAL_SCHOOL, POST_RESIDENCY_CAREER,
+                             PUBLICATION, RESIDENCY, RESIDENT, TABLES)
+from utils.selectFunctions import (insert_if_not_exists, select_from_table,
+                                   select_with_condition)
 
 # Connect to the MySQL database
 try:
@@ -69,16 +76,43 @@ def createQueryString(names, match_year, grad_year):
     
     return queryString
 
+def find_author_in_authors_list(author, authors):
+    """
+    Given an author and list of authors, return the index of the author in the list.
+    """
+    for i, a in enumerate(authors):
+        if a["firstname"] == author.first_name and a["lastname"] == author.last_name:
+            return i
+    return -1
+
+
+def get_author_ordership_from_list(author, authors):
+    """
+    Given a list of authors and author, return the order of authorship.
+    """
+    author_index = find_author_in_authors_list(author, authors)
+    if author_index == 1:
+        return '1st'
+    elif author_index == 2:
+        return '2nd'
+    elif author_index == authors.__len__() - 1:
+        return 'last',
+    else:
+        return 'mid'
+            
+
+
 # Query the database to receive all resident names and match year
 cursor = conn.cursor()
-cursor.execute("""
-    SELECT CONCAT(first_name, ' ', COALESCE(CONCAT(middle_name, ' '), ''), last_name) AS full_name, r.match_year, r.grad_year 
-    FROM resident AS r
-""")
-residents = cursor.fetchall()
+results = select_from_table(cursor, TABLES["RESIDENT"], 
+    [f"CONCAT(first_name, ' ', COALESCE(CONCAT(middle_name, ' '), ''), last_name) AS full_name", 
+     RESIDENT["ID"], RESIDENT["MATCH_YEAR"], RESIDENT["GRAD_YEAR"], RESIDENT["FIRST_NAME"], RESIDENT["LAST_NAME"]])
+residents = results
 
 # Process each resident
 for resident in residents:
+    # print resident
+    print(f"\nProcessing resident: {resident.full_name}, {resident.match_year}, {resident.grad_year}, {resident.id}")
     resident.match_year = f"{resident.match_year}/01/01"
     print(f"\nProcessing publications for: {resident.full_name}, {resident.match_year}")
     
@@ -90,14 +124,63 @@ for resident in residents:
     results = pubmed.query(query, max_results=5000)
     
     print(f"Found publications:")
-    # Print the number of results
-    print(f"- {len(list(results))} results found")    
     for article in results:
-        # print(f"- {article.title}")
-        # print(f"  Journal: {article.journal}")
-        # print(f"  Date: {article.publication_date}")
-        # print(f"  DOI: {article.doi}")
+        print(f"- {article.title}")
+        print(f"  Journal: {article.journal}")
+        print(f"  Date: {article.publication_date}")
+        print(f"  DOI: {article.doi}")
         print("---")
+
+        # Insert journal and get its ID
+        journal_name = article.journal
+        insert_if_not_exists(cursor, TABLES["JOURNAL"], {JOURNAL["NAME"]: journal_name})
+        journal_results = select_with_condition(cursor, TABLES["JOURNAL"], 
+                                             conditions={JOURNAL["NAME"]: journal_name})
+        journal_id = journal_results[0][0]
+
+        # Insert publication and get its ID
+        publication_data = {
+            PUBLICATION["JOURNAL_ID"]: journal_id,
+            PUBLICATION["DATE_PUBLISHED"]: article.publication_date,
+            PUBLICATION["TOPIC"]: article.title,
+            PUBLICATION["DOI"]: article.doi,
+        }
+        insert_if_not_exists(cursor, TABLES["PUBLICATION"], publication_data)
+        publication_results = select_with_condition(cursor, TABLES["PUBLICATION"], 
+                                                 conditions={PUBLICATION["TOPIC"]: publication_data[PUBLICATION["TOPIC"]]})
+        publication_id = publication_results[0][0]
+
+        # Insert author and get its ID
+        author_data = {
+            AUTHOR["RESIDENT_ID"]: resident.id,
+            AUTHOR["H_INDEX"]: None,
+            AUTHOR["AOA_STATUS"]: None,
+            AUTHOR["RANK"]: None,
+            AUTHOR["PROGRAM_DIRECTOR"]: None,
+            AUTHOR["FIRST_ATTENDING_YEAR"]: resident.grad_year,
+            # afilliation is article.authors[find_author_in_authors_list(resident, article.authors)][AUTHOR["AFFILIATION"]] or ''
+            AUTHOR["AFFILIATION"]: article.authors[find_author_in_authors_list(resident, article.authors)][AUTHOR["AFFILIATION"]] if find_author_in_authors_list(resident, article.authors) != -1 else ''
+        }
+        # PRINT AUTHOR DATA and affiliation
+        print(f"  Author data: {author_data}")
+        print(f"  Author affiliation: {article.authors[find_author_in_authors_list(resident, article.authors)][AUTHOR["AFFILIATION"]]}")
+        insert_if_not_exists(cursor, TABLES["AUTHOR"], {AUTHOR["RESIDENT_ID"]: author_data[AUTHOR["RESIDENT_ID"]], AUTHOR["FIRST_ATTENDING_YEAR"]: author_data[AUTHOR["FIRST_ATTENDING_YEAR"]], AUTHOR["AFFILIATION"]: author_data[AUTHOR["AFFILIATION"]]})
+        author_results = select_with_condition(cursor, TABLES["AUTHOR"], 
+                                            conditions={AUTHOR["RESIDENT_ID"]: author_data[AUTHOR["RESIDENT_ID"]]})
+        author_id = author_results[0][0]
+
+        # Insert author-publication relationship
+        #print full name
+        print(f"  Author: {resident.full_name}")
+        # print(f"  article authors: {article.authors}")
+        author_publication_data = {
+            AUTHOR_PUBLICATION["AUTHOR_ID"]: author_id,
+            AUTHOR_PUBLICATION["PUBLICATION_ID"]: publication_id,
+            AUTHOR_PUBLICATION["ORDER_OF_AUTHORSHIP"]: get_author_ordership_from_list(resident, article.authors)
+        }
+        insert_if_not_exists(cursor, TABLES["AUTHOR_PUBLICATION"], author_publication_data)
+
+    print(f"- {len(list(results))} results found")    
 
 cursor.close()
 conn.close()

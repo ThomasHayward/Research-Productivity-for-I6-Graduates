@@ -18,21 +18,23 @@ CREATE TABLE IF NOT EXISTS `resident` (
 );
 
 CREATE TABLE IF NOT EXISTS `author` (
-  `id` integer PRIMARY KEY AUTO_INCREMENT,
+  `id` integer AUTO_INCREMENT,
   `resident_id` integer,
   `h_index` integer,
   `aoa_status` boolean,
   `rank` integer,
   `program_director` boolean,
-  `first_attending_year` integer
+  `first_attending_year` integer,
+  `affiliation` varchar(512) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`, `affiliation`)
 );
 
 CREATE TABLE IF NOT EXISTS `publication` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `journal_id` integer,
   `date_published` date,
-  `topic` varchar(255),
-  `affiliation` varchar(255),
+  `topic` MEDIUMTEXT,
+  `doi` MEDIUMTEXT,
   `type` varchar(255)
 );
 
