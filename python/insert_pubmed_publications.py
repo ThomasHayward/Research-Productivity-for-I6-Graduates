@@ -6,8 +6,10 @@ from utils.constants import (AUTHOR, AUTHOR_PUBLICATION, FELLOWSHIP, JOURNAL,
                              MEDICAL_SCHOOL, POST_RESIDENCY_CAREER,
                              PUBLICATION, RESIDENCY, RESIDENT, TABLES)
 from utils.insert_document import insert_pubmed_full_article
-from utils.selectFunctions import (insert_if_not_exists, select_from_table,
-                                   select_with_condition)
+
+from python.utils.select_functions import (insert_if_not_exists,
+                                           select_from_table,
+                                           select_with_condition)
 
 # Connect to the MySQL database
 try:
