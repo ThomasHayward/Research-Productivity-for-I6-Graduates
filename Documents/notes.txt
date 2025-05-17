@@ -14,4 +14,10 @@ Different name permeations:
     Doe, Jane Marie
     J.Doe
 
+
+
+TOTAL
+institution - residency + post residency
+count of pubs per person
+
    

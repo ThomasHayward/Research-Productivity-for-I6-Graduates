@@ -34,6 +34,7 @@ def process_row(conn, row):
                                {MEDICAL_SCHOOL["NAME"]: medical_school})
 
         # Handle fellowship
+        fellowship_id = None
         if fellowship:
             fellowship_parts = fellowship.split('@')
             fellowship_name = fellowship_parts[0].strip()
@@ -42,8 +43,12 @@ def process_row(conn, row):
             insert_if_not_exists(cursor, TABLES["FELLOWSHIP"], 
                                {FELLOWSHIP["NAME"]: fellowship_name,
                                 FELLOWSHIP["INSTITUTION_NAME"]: fellowship_institution})
+            
+            fellowship_result = select_with_condition(cursor, TABLES["FELLOWSHIP"], conditions={FELLOWSHIP["NAME"]: fellowship_name})
+            fellowship_id = fellowship_result[0][0] if fellowship_result else None
 
         # Handle post-residency career
+        post_residency_career_id = None
         if post_residency_career:
             career_type = None
             if pd.notna(career_res):
@@ -53,6 +58,9 @@ def process_row(conn, row):
                 insert_if_not_exists(cursor, TABLES["POST_RESIDENCY_CAREER"],
                                    {POST_RESIDENCY_CAREER["NAME"]: post_residency_career,
                                     POST_RESIDENCY_CAREER["TYPE"]: career_type})
+            
+            post_residency_career_result = select_with_condition(cursor, TABLES["POST_RESIDENCY_CAREER"], conditions={POST_RESIDENCY_CAREER["NAME"]: post_residency_career})
+            post_residency_career_id = post_residency_career_result[0][0] if post_residency_career_result else None
 
         # Handle resident insertion
         duration = row['Grad_year'] - row['Match_year']
@@ -60,13 +68,15 @@ def process_row(conn, row):
         residency_research = duration - 6
 
         # Get required IDs using select_with_condition which now returns results directly
-        residency_result = select_with_condition(cursor, TABLES["RESIDENCY"], 
-                                               conditions={RESIDENCY["NAME"]: residency})
+        residency_result = select_with_condition(cursor, TABLES["RESIDENCY"], conditions={RESIDENCY["NAME"]: residency})
         residency_id = residency_result[0][0] if residency_result else None
 
-        medical_school_result = select_with_condition(cursor, TABLES["MEDICAL_SCHOOL"], 
-                                                    conditions={MEDICAL_SCHOOL["NAME"]: medical_school})
+        medical_school_result = select_with_condition(cursor, TABLES["MEDICAL_SCHOOL"], conditions={MEDICAL_SCHOOL["NAME"]: medical_school})
         medical_school_id = medical_school_result[0][0] if medical_school_result else None
+        
+        
+
+        
 
         resident_data = {
             RESIDENT["FIRST_NAME"]: row['First_Name'].strip(),
@@ -78,7 +88,9 @@ def process_row(conn, row):
             RESIDENT["MEDICAL_SCHOOL_RESEARCH_YEARS"]: med_school_research,
             RESIDENT["RESIDENCY_RESEARCH_YEARS"]: residency_research,
             RESIDENT["MEDICAL_SCHOOL_ID"]: medical_school_id,
-            RESIDENT["RESIDENCY_ID"]: residency_id
+            RESIDENT["RESIDENCY_ID"]: residency_id,
+            RESIDENT["FELLOWSHIP_ID"]: fellowship_id,
+            RESIDENT["POST_RESIDENCY_CAREER_ID"]: post_residency_career_id,
         }
 
         # Create check_fields for existence check

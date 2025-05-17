@@ -47,7 +47,6 @@ def get_author_ordership_from_list(author, authors):
     else:
         return 'mid'
 
-
 def insert_pubmed_article_single_table(cursor, table: str, insert_fields: dict, check_fields: dict = None, conditions=None):
     if check_fields is None:
         check_fields = insert_fields
