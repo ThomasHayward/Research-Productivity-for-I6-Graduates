@@ -21,6 +21,7 @@ RESIDENT = {
     "MATCH_YEAR": "match_year",
     "GRAD_YEAR": "grad_year",
     "DURATION": "duration",
+    "SEX": "sex",
     "MEDICAL_SCHOOL_RESEARCH_YEARS": "medical_school_research_years",
     "RESIDENCY_RESEARCH_YEARS": "residency_research_years",
     "MEDICAL_SCHOOL_ID": "medical_school_id",

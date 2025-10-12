@@ -34,46 +34,51 @@ def connect_to_db():
 def name_permeatations(name):
     """
     Given a name, return all possible permutations of the name.
+    Handles multiple middle names and last names with forward slash.
     """
-    # Split the name into first and last names
     names = name.split()
     
-    # Check if the name has a middle name
-    if (len(names) == 1):
+    # Handle different name lengths
+    if len(names) == 1:
         firstName = names[0]
-        middleName = ''
+        middleNames = []
         lastName = ''
-    elif (len(names) == 2):
+    elif len(names) == 2:
         firstName = names[0]
-        middleName = ''
+        middleNames = []
         lastName = names[1]
-    elif (len(names) == 3):
+    else:
         firstName = names[0]
-        middleName = names[1]
-        lastName = names[2]
-    elif (len(names) > 3):
-        firstName = names[0]
-        middleName = ' '.join(names[1:-1])
         lastName = names[-1]
+        middleNames = names[1:-1]  # All names between first and last are middle names
     
-    # Create a list of all possible permutations of the names using the guide above
+    # Create middle name variations
+    middleInitials = ''.join(name[0] for name in middleNames) if middleNames else ''
+    middleName = ' '.join(middleNames) if middleNames else ''
+
+    # Handle multiple last names separated by forward slash
+    lastNames = lastName.split('/')
     permutations = []
 
-    permutations.append(f"{lastName} {firstName[0]}") # Doe J
-    permutations.append(f"{lastName}, {firstName[0]}.") # Doe, J.
-    permutations.append(f"{firstName} {lastName}") # Jane Doe
-    permutations.append(f"{firstName[0]}. {lastName}") # J. Doe
-    permutations.append(f"{lastName}, {firstName}") # Doe, Jane
-    permutations.append(f"{firstName[0]}{lastName}") # JDoe
+    for last in lastNames:
+        permutations.extend([
+            f"{last} {firstName[0]}", # Doe J
+            f"{last}, {firstName[0]}.", # Doe, J.
+            f"{firstName} {last}", # Jane Doe
+            f"{firstName[0]}. {last}", # J. Doe
+            f"{last}, {firstName}", # Doe, Jane
+            f"{firstName[0]}{last}" # JDoe
+        ])
 
-    if middleName:
-        permutations.append(f"{lastName} {firstName[0]}{middleName[0]}") # Doe JM
-        permutations.append(f"{lastName}, {firstName[0]}.{middleName[0]}.") # Doe, J.M.
-        permutations.append(f"{firstName} {middleName} {lastName}") # Jane Marie Doe
-        permutations.append(f"{firstName} {middleName}. {lastName}") # Jane M. Doe
-        permutations.append(f"{firstName[0]}.{middleName[0]}. {lastName}") # J.M. Doe
-        permutations.append(f"{firstName[0]}. {middleName[0]}. {lastName}") # J. M. Doe
-        permutations.append(f"{lastName}, {firstName} {middleName}") # Doe, Jane Marie        
+        if middleNames:
+            permutations.extend([
+                f"{last} {firstName[0]}{middleInitials}", # Doe JMK
+                f"{last}, {firstName[0]}.{'.'.join(mi + '.' for mi in middleInitials)}", # Doe, J.M.K.
+                f"{firstName} {middleName} {last}", # Jane Marie Kate Doe
+                f"{firstName} {'.'.join(mi + '.' for mi in middleInitials)} {last}", # Jane M.K. Doe
+                f"{firstName[0]}.{'.'.join(mi + '.' for mi in middleInitials)} {last}", # J.M.K. Doe
+                f"{last}, {firstName} {middleName}" # Doe, Jane Marie Kate
+            ])
 
     return permutations
 
@@ -102,14 +107,15 @@ scopus: {
     "YEAR": lambda match_year, grad_year: f"PUBYEAR >= {match_year} AND PUBYEAR <= {grad_year}"
 }
 """
-def format_query_string(name, match_year, grad_year, format=dict):
+def format_query_string(names, match_year, format=dict):
     AUTHOR = "AUTHOR"
     YEAR = "YEAR"
     queryString = ""
-    queryString += f"({format['AUTHOR'](name)}) AND ({format['YEAR'](match_year, grad_year)}) OR "
 
-    # for name in names:
+    for name in names:
     #     # Use the format dictionary to create the query string
+        queryString += f"({format['AUTHOR'](name)}) AND ({format['YEAR'](match_year)}) OR "
+
     # Remove the last " OR "
     queryString = queryString[:-4]
     return queryString

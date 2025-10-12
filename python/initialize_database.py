@@ -60,12 +60,14 @@ def process_row(conn, row):
                                     POST_RESIDENCY_CAREER["TYPE"]: career_type})
             
             post_residency_career_result = select_with_condition(cursor, TABLES["POST_RESIDENCY_CAREER"], conditions={POST_RESIDENCY_CAREER["NAME"]: post_residency_career})
-            post_residency_career_id = post_residency_career_result[0][0] if post_residency_career_result else None
-
-        # Handle resident insertion
-        duration = row['Grad_year'] - row['Match_year']
+            post_residency_career_id = post_residency_career_result[0][0] if post_residency_career_result else None        # Handle resident insertion
+        # Remove commas from year values and convert to int
+        grad_year = int(str(row['Grad_year']).replace(',', ''))
+        match_year = int(str(row['Match_year']).replace(',', ''))
+        duration = grad_year - match_year
         med_school_research = 0
         residency_research = duration - 6
+        sex = row['Sex']
 
         # Get required IDs using select_with_condition which now returns results directly
         residency_result = select_with_condition(cursor, TABLES["RESIDENCY"], conditions={RESIDENCY["NAME"]: residency})
@@ -74,16 +76,13 @@ def process_row(conn, row):
         medical_school_result = select_with_condition(cursor, TABLES["MEDICAL_SCHOOL"], conditions={MEDICAL_SCHOOL["NAME"]: medical_school})
         medical_school_id = medical_school_result[0][0] if medical_school_result else None
         
-        
-
-        
-
         resident_data = {
             RESIDENT["FIRST_NAME"]: row['First_Name'].strip(),
             RESIDENT["MIDDLE_NAME"]: row['Middle_Name'].strip() if pd.notna(row['Middle_Name']) else None,
             RESIDENT["LAST_NAME"]: row['Last_Name'].strip(),
-            RESIDENT["MATCH_YEAR"]: row['Match_year'],
-            RESIDENT["GRAD_YEAR"]: row['Grad_year'],
+            RESIDENT["MATCH_YEAR"]: match_year,  # Use cleaned version without comma
+            RESIDENT["GRAD_YEAR"]: grad_year,    # Use cleaned version without comma
+            RESIDENT["SEX"]: sex,
             RESIDENT["DURATION"]: duration,
             RESIDENT["MEDICAL_SCHOOL_RESEARCH_YEARS"]: med_school_research,
             RESIDENT["RESIDENCY_RESEARCH_YEARS"]: residency_research,
@@ -92,7 +91,6 @@ def process_row(conn, row):
             RESIDENT["FELLOWSHIP_ID"]: fellowship_id,
             RESIDENT["POST_RESIDENCY_CAREER_ID"]: post_residency_career_id,
         }
-
         # Create check_fields for existence check
         check_fields = {
             RESIDENT["FIRST_NAME"]: resident_data[RESIDENT["FIRST_NAME"]],

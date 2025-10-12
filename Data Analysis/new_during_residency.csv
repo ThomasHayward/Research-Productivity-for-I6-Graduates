@@ -1,0 +1,87 @@
+resident_id,post_residency_career_type,sex,institution,fellowship,total_publications
+21,Academic,M,Iowa,1,1
+35,Academic,M,Rochester,0,3
+42,Academic,M,UPenn,0,14
+4,Academic,M,Cleveland Clinic,0,7
+5,Academic,M,Cleveland Clinic,0,4
+37,Academic,M,Rochester,0,1
+7,Academic,M,Cleveland Clinic,0,19
+8,Academic,M,Cleveland Clinic,0,2
+9,Academic,M,Columbia,0,5
+43,Academic,F,UNC,0,14
+54,Academic,F,Davis,1,0
+12,Academic,M,Columbia,0,7
+13,Academic,F,Duke,0,6
+14,Academic,F,Emory,1,0
+15,Academic,M,Emory,0,54
+16,Academic,F,Emory,0,40
+17,Academic,F,Emory,0,6
+18,Academic,F,Emory,0,0
+19,Academic,M,Northwell,1,2
+20,Academic,M,Northwell,1,1
+39,Academic,F,UK,0,2
+40,Academic,M,UK,0,3
+23,Academic,F,Mt Sinai,0,11
+24,Academic,F,Mt Sinai,0,0
+25,Academic,M,Mt Sinai,1,14
+26,Academic,F,Mt Sinai,1,34
+27,Academic,M,MUSC,0,0
+28,Academic,M,MUSC,1,0
+41,Academic,F,UK,0,1
+30,Academic,M,Northwestern,0,0
+31,Academic,M,Stanford,0,14
+32,Academic,M,Stanford,0,8
+33,Academic,M,Michigan,0,7
+34,Academic,M,Michigan,1,0
+46,Academic,M,UPMC,0,3
+47,Academic,F,UPMC,0,6
+48,Academic,F,UPMC,1,50
+49,Academic,M,USC,1,1
+52,Academic,M,UT Antonio,0,10
+53,Academic,M,UVA,1,1
+56,Academic,F,Yale,0,1
+57,Academic,M,Brigham,0,26
+62,Academic,M,Columbia,0,0
+64,Academic,M,Emory,0,0
+65,Academic,M,Emory,1,15
+67,Academic,M,Iowa,0,4
+68,Academic,M,MUSC,0,0
+69,Academic,F,MUSC,0,0
+71,Academic,M,Stanford,0,99
+75,Academic,M,UPenn,0,23
+77,Academic,M,UPMC,0,6
+80,Academic,F,UT Antonio,0,5
+81,Academic,M,UVA,0,3
+82,Academic,M,Yale,0,153
+83,Academic,M,Yale,0,20
+29,Private,M,Northwestern,0,4
+36,Private,M,Rochester,0,12
+58,Private,M,Cincinnati,0,0
+59,Private,M,Cleveland Clinic,0,1
+60,Private,M,Cleveland Clinic,0,6
+61,Private,M,Cleveland Clinic,0,0
+38,Private,F,Uwash,0,2
+63,Private,M,Duke,0,0
+1,Private,F,Cincinnati,0,0
+45,Private,M,UNC,0,10
+66,Private,M,Northwell,0,15
+2,Private,M,Cincinnati,0,1
+3,Private,M,Cleveland Clinic,0,4
+6,Private,M,Cleveland Clinic,0,2
+70,Private,M,Stanford,0,0
+10,Private,M,Columbia,0,7
+72,Private,M,Michigan,0,2
+73,Private,M,Uwash,0,0
+74,Private,M,UK,0,1
+50,Private,F,USC,0,0
+76,Private,F,UPenn,0,0
+51,Private,F,UT Antonio,0,0
+78,Private,F,UPMC,0,1
+79,Private,M,USC,0,1
+11,Private,M,Columbia,0,1
+22,Private,F,Maryland,0,3
+44,Private,F,UNC,0,1
+55,Private,M,Davis,1,0
+84,Private,M,Cleveland Clinic,1,0
+85,Private,M,Cleveland Clinic,0,4
+86,Private,M,Cleveland Clinic,0,4

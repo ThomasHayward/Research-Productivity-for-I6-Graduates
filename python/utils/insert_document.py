@@ -58,56 +58,50 @@ def insert_pubmed_article_single_table(cursor, table: str, insert_fields: dict, 
     return results[0][0]
 
 def insert_pubmed_full_article(cursor, resident, article, database):
-        # print(f"- {article.title}")
-        # print(f"  Journal: {article.journal}")
-        # print(f"  Date: {article.publication_date}")
-        # print(f"  DOI: {article.doi}")
-        # print("---")
-
-        author_indx = find_author_in_authors_list(resident, article.authors)
-        if author_indx == -1:
-            # print(f"Author not found in authors list for article: {article.title}")
-            return
-
-        journal_id = insert_pubmed_article_single_table(cursor, TABLES["JOURNAL"], 
-            insert_fields={JOURNAL["NAME"]: article.journal})
-        # print(f"Journal ID: {journal_id}")
-        publication_id = insert_pubmed_article_single_table(cursor, TABLES["PUBLICATION"], 
-            insert_fields={
-                PUBLICATION["JOURNAL_ID"]: journal_id,
-                PUBLICATION["DATE_PUBLISHED"]: article.publication_date,
-                PUBLICATION["TOPIC"]: article.title,
-                PUBLICATION["DOI"]: article.doi,
-            }, 
-            conditions={PUBLICATION["TOPIC"]: article.title})
-        # print(f"Publication ID: {publication_id}")
-        
-        # Get author affiliation, use empty string if not found
-        author_affiliation = ''
-        if author_indx != -1:
-            try:
-                author_affiliation = article.authors[author_indx].get('affiliation', '') or ''
-            except (AttributeError, KeyError, IndexError):
-                author_affiliation = ''
-            
-        author_data = {
-            AUTHOR["RESIDENT_ID"]: resident.id,
-            AUTHOR["FIRST_ATTENDING_YEAR"]: resident.grad_year,
-            AUTHOR["AFFILIATION"]: author_affiliation
-        }
-        
-        author_id = insert_pubmed_article_single_table(cursor, TABLES["AUTHOR"], 
-            insert_fields=author_data,
-            conditions={AUTHOR["RESIDENT_ID"]: resident.id})
-        # print(f"Author ID: {author_id}")
-        author_publication_id = insert_pubmed_article_single_table(cursor, TABLES["AUTHOR_PUBLICATION"], 
-            insert_fields={
-                AUTHOR_PUBLICATION["AUTHOR_ID"]: author_id,
-                AUTHOR_PUBLICATION["PUBLICATION_ID"]: publication_id,
-                AUTHOR_PUBLICATION["ORDER_OF_AUTHORSHIP"]: get_author_ordership_from_list(resident, article.authors)
-            }, 
-            conditions={
-                AUTHOR_PUBLICATION["AUTHOR_ID"]: author_id, 
-                AUTHOR_PUBLICATION["PUBLICATION_ID"]: publication_id
-            })
-        # print(f"Author Publication ID: {author_publication_id}")
+    import logging
+    author_indx = find_author_in_authors_list(resident, article.authors)
+    if author_indx == -1:
+        return
+    journal_id = insert_pubmed_article_single_table(cursor, TABLES["JOURNAL"], 
+        insert_fields={JOURNAL["NAME"]: article.journal})
+    logging.info(f"Journal ID: {journal_id} for journal: {article.journal}")
+    publication_id = insert_pubmed_article_single_table(cursor, TABLES["PUBLICATION"], 
+        insert_fields={
+            PUBLICATION["JOURNAL_ID"]: journal_id,
+            PUBLICATION["DATE_PUBLISHED"]: article.publication_date,
+            PUBLICATION["TOPIC"]: article.title,
+            PUBLICATION["DOI"]: article.doi,
+        }, 
+        conditions={PUBLICATION["TOPIC"]: article.title})
+    logging.info(f"Publication ID: {publication_id} for title: {article.title}")
+    
+    # Get author affiliation, use empty string if not found
+    author_affiliation = ''
+    if author_indx != -1:
+        try:
+            author_affiliation = article.authors[author_indx].get('affiliation', '') or ''
+        except (AttributeError, KeyError, IndexError):
+            author_affiliation = ''
+    author_data = {
+        AUTHOR["RESIDENT_ID"]: resident.id,
+        AUTHOR["FIRST_ATTENDING_YEAR"]: resident.grad_year,
+        AUTHOR["AFFILIATION"]: author_affiliation
+    }
+    logging.info(f"Author data: {author_data}")
+    author_id = insert_pubmed_article_single_table(cursor, TABLES["AUTHOR"], 
+        insert_fields=author_data,
+        conditions={AUTHOR["RESIDENT_ID"]: resident.id})
+    logging.info(f"Author ID: {author_id} for resident: {resident.full_name}")
+    order_of_authorship = get_author_ordership_from_list(resident, article.authors)
+    logging.info(f"Attempting to insert author_publication: author_id={author_id}, publication_id={publication_id}, order_of_authorship={order_of_authorship}")
+    author_publication_id = insert_pubmed_article_single_table(cursor, TABLES["AUTHOR_PUBLICATION"], 
+        insert_fields={
+            AUTHOR_PUBLICATION["AUTHOR_ID"]: author_id,
+            AUTHOR_PUBLICATION["PUBLICATION_ID"]: publication_id,
+            AUTHOR_PUBLICATION["ORDER_OF_AUTHORSHIP"]: order_of_authorship
+        }, 
+        conditions={
+            AUTHOR_PUBLICATION["AUTHOR_ID"]: author_id, 
+            AUTHOR_PUBLICATION["PUBLICATION_ID"]: publication_id
+        })
+    logging.info(f"Author Publication ID: {author_publication_id}")

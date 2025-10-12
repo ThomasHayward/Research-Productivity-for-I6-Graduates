@@ -96,37 +96,11 @@ def insert_if_not_exists(cursor, table: str, check_fields: dict, insert_fields: 
         return insert_into_table(cursor, table, insert_fields)
     return False
 
-# Function Support Guide:
-#
-# select_from_table:
-# - Supports single or multiple fields
-# - Example single: [RESIDENT["FIRST_NAME"]]
-# - Example multiple: [RESIDENT["FIRST_NAME"], RESIDENT["LAST_NAME"]]
-#
-# select_with_condition:
-# - Supports single or multiple fields and conditions
-# - Fields example single: [RESIDENT["FIRST_NAME"]]
-# - Fields example multiple: [RESIDENT["FIRST_NAME"], RESIDENT["LAST_NAME"]]
-# - Conditions example single: {RESIDENT["MATCH_YEAR"]: 2020}
-# - Conditions example multiple: {RESIDENT["MATCH_YEAR"]: 2020, RESIDENT["RESIDENCY_ID"]: 1}
-#
-# insert_into_table:
-# - Supports single or multiple fields in one record
-# - Example single: {RESIDENT["FIRST_NAME"]: "John"}
-# - Example multiple: {RESIDENT["FIRST_NAME"]: "John", RESIDENT["LAST_NAME"]: "Doe"}
-#
-# insert_multiple:
-# - Supports multiple records with single or multiple fields
-# - Fields example single: [RESIDENT["FIRST_NAME"]]
-# - Fields example multiple: [RESIDENT["FIRST_NAME"], RESIDENT["LAST_NAME"]]
-# - Values must match field count
-#
-# exists_in_table:
-# - Supports single or multiple conditions
-# - Example single: {RESIDENT["ID"]: 1}
-# - Example multiple: {RESIDENT["FIRST_NAME"]: "John", RESIDENT["LAST_NAME"]: "Doe"}
-#
-# count_in_table:
-# - Supports single or multiple conditions
-# - Example single: {RESIDENT["MATCH_YEAR"]: 2020}
-# - Example multiple: {RESIDENT["MATCH_YEAR"]: 2020, RESIDENT["RESIDENCY_ID"]: 1}
+def update_table(cursor, table_name: str, update_fields: Dict[str, any], conditions: Dict[str, any]) -> bool:
+    """Update fields in a table for records matching conditions."""
+    set_clause = ", ".join([f"{field} = {format_sql_value(value)}" for field, value in update_fields.items()])
+    where_clause = " AND ".join([f"{field} = {format_sql_value(value)}" for field, value in conditions.items()])
+    query = f"UPDATE {table_name} SET {set_clause} WHERE {where_clause}"
+    cursor.execute(query)
+    cursor.commit()
+    return True
