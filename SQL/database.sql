@@ -10,6 +10,8 @@ CREATE TABLE IF NOT EXISTS `resident` (
     `match_year` integer,
     `grad_year` integer,
     `duration` integer,
+    `credentials` varchar(255),
+    `h_index` integer,
     `sex` ENUM('M', 'F'),
     `medical_school_research_years` integer,
     `residency_research_years` integer,
@@ -22,7 +24,6 @@ CREATE TABLE IF NOT EXISTS `resident` (
 CREATE TABLE IF NOT EXISTS `author` (
     `id` integer AUTO_INCREMENT,
     `resident_id` integer,
-    `h_index` integer,
     `aoa_status` boolean,
     `rank` integer,
     `program_director` boolean,
