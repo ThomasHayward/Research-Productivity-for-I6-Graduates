@@ -2,6 +2,7 @@
 import os
 from datetime import datetime
 
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -17,6 +18,7 @@ from util.robust_stats import print_median_iqr, print_prop_above_threshold
 from util.ttest import print_ttest_summary, print_welchs_ttest
 from util.zero_inflated import fit_zero_inflated_poisson, print_zip_summary
 
+matplotlib.use('Agg')
 
 def analyze_data(df, period, output_dir):
 
@@ -24,6 +26,14 @@ def analyze_data(df, period, output_dir):
     # Create output files
     stats_file = os.path.join(output_dir, f'analysis_stats_{period}.txt')
     pdf_file = os.path.join(output_dir, f'analysis_plots_{period}.pdf')
+    
+    # Calculate publication rates for post-residency data (if years_post_graduation is present)
+    if 'years_post_graduation' in df.columns and period == 'post_residency':
+        # Calculate publications per year
+        df['publications_per_year'] = df.apply(
+            lambda row: row['total_publications'] / row['years_post_graduation'] 
+            if row['years_post_graduation'] > 0 else 0, axis=1
+        )
     
     # Convert career type to binary
     df['career_binary'] = (df['post_residency_career_type'] == 'Academic').astype(int)
@@ -86,6 +96,101 @@ def analyze_data(df, period, output_dir):
         else:
             f.write("No data available for summary statistics.\n")
         f.write("\n\n")
+
+    # For post-residency data, add time-controlled analysis
+        if 'years_post_graduation' in df.columns and period == 'post_residency':
+            f.write("="*80 + "\n")
+            f.write("TIME SINCE GRADUATION ANALYSIS\n")
+            f.write("="*80 + "\n\n")
+
+            academic_years = df[df['post_residency_career_type'] == 'Academic']['years_post_graduation']
+            private_years = df[df['post_residency_career_type'] == 'Private']['years_post_graduation']
+
+            f.write("Years Post-Graduation - Academic:\n")
+            f.write(f"  Mean ± SD: {academic_years.mean():.2f} ± {academic_years.std():.2f}\n")
+            f.write(f"  Median (IQR): {academic_years.median():.1f} ({academic_years.quantile(0.25):.1f} - {academic_years.quantile(0.75):.1f})\n")
+            f.write(f"  Range: {academic_years.min()} - {academic_years.max()}\n\n")
+
+            f.write("Years Post-Graduation - Private:\n")
+            f.write(f"  Mean ± SD: {private_years.mean():.2f} ± {private_years.std():.2f}\n")
+            f.write(f"  Median (IQR): {private_years.median():.1f} ({private_years.quantile(0.25):.1f} - {private_years.quantile(0.75):.1f})\n")
+            f.write(f"  Range: {private_years.min()} - {private_years.max()}\n\n")
+
+            # Test for difference in years post-graduation
+            from scipy import stats as scipy_stats
+            t_stat_years, p_val_years = scipy_stats.ttest_ind(academic_years, private_years, equal_var=False)
+            f.write(f"Welch's t-test for years post-graduation:\n")
+            f.write(f"  t = {t_stat_years:.3f}, p = {p_val_years:.4f}\n")
+            if p_val_years < 0.05:
+                f.write(f"  **SIGNIFICANT DIFFERENCE in time since graduation between groups**\n")
+                f.write(f"  This validates the need for rate-based analysis!\n\n")
+            else:
+                f.write(f"  No significant difference in time since graduation\n\n")
+
+            f.write("="*80 + "\n")
+            f.write("PUBLICATION RATE ANALYSIS (Publications per Year)\n")
+            f.write("="*80 + "\n\n")
+
+            academic_rate = df[df['post_residency_career_type'] == 'Academic']['publications_per_year']
+            private_rate = df[df['post_residency_career_type'] == 'Private']['publications_per_year']
+
+            f.write("Academic - Publication Rate:\n")
+            f.write(f"  Mean ± SD: {academic_rate.mean():.3f} ± {academic_rate.std():.3f} pubs/year\n")
+            f.write(f"  Median (IQR): {academic_rate.median():.3f} ({academic_rate.quantile(0.25):.3f} - {academic_rate.quantile(0.75):.3f})\n")
+            f.write(f"  Range: {academic_rate.min():.3f} - {academic_rate.max():.3f}\n")
+            f.write(f"  % with rate > 0: {(academic_rate > 0).mean() * 100:.1f}%\n\n")
+
+            f.write("Private - Publication Rate:\n")
+            f.write(f"  Mean ± SD: {private_rate.mean():.3f} ± {private_rate.std():.3f} pubs/year\n")
+            f.write(f"  Median (IQR): {private_rate.median():.3f} ({private_rate.quantile(0.25):.3f} - {private_rate.quantile(0.75):.3f})\n")
+            f.write(f"  Range: {private_rate.min():.3f} - {private_rate.max():.3f}\n")
+            f.write(f"  % with rate > 0: {(private_rate > 0).mean() * 100:.1f}%\n\n")
+
+            # Statistical tests on rates
+            f.write("Statistical Tests on Publication Rates:\n")
+            f.write("-" * 40 + "\n")
+
+            t_stat_rate, p_val_rate = scipy_stats.ttest_ind(academic_rate, private_rate, equal_var=False)
+            f.write(f"Welch's t-test on rates: t = {t_stat_rate:.3f}, p = {p_val_rate:.4f}\n")
+
+            u_stat_rate, p_val_mw_rate = scipy_stats.mannwhitneyu(academic_rate, private_rate, alternative='two-sided')
+            f.write(f"Mann-Whitney U test on rates: U = {u_stat_rate:.1f}, p = {p_val_mw_rate:.4f}\n")
+
+            # Effect size for rates
+            mean_diff_rate = academic_rate.mean() - private_rate.mean()
+            pooled_std_rate = np.sqrt((academic_rate.std()**2 + private_rate.std()**2) / 2)
+            cohens_d_rate = mean_diff_rate / pooled_std_rate if pooled_std_rate > 0 else 0
+            f.write(f"Cohen's d (effect size) for rates: {cohens_d_rate:.3f}\n")
+            if abs(cohens_d_rate) < 0.2:
+                f.write("  (Small effect)\n")
+            elif abs(cohens_d_rate) < 0.5:
+                f.write("  (Small to medium effect)\n")
+            elif abs(cohens_d_rate) < 0.8:
+                f.write("  (Medium to large effect)\n")
+            else:
+                f.write("  (Large effect)\n")
+            f.write("\n")
+
+            # Linear regression: Rate ~ Career Type + Years Post-Graduation
+            f.write("="*80 + "\n")
+            f.write("LINEAR REGRESSION: Rate ~ Career Type + Years Post-Graduation\n")
+            f.write("="*80 + "\n\n")
+
+            X_rate = df[['career_binary', 'years_post_graduation']]
+            X_rate = sm.add_constant(X_rate)
+            y_rate = df['publications_per_year']
+
+            model_rate = sm.OLS(y_rate, X_rate).fit()
+            f.write(str(model_rate.summary()))
+            f.write("\n\n")
+
+            f.write("INTERPRETATION:\n")
+            f.write(f"Controlling for years post-graduation, academics publish at a rate\n")
+            f.write(f"that is {model_rate.params['career_binary']:.4f} publications/year ")
+            f.write(f"{'higher' if model_rate.params['career_binary'] > 0 else 'lower'} than private practitioners\n")
+            f.write(f"(p = {model_rate.pvalues['career_binary']:.4f})\n\n")
+
+            f.write("="*80 + "\n\n")
 
         # T-test for difference in means between Academic and Private
         if len(academic_pubs) > 1 and len(private_pubs) > 1:
@@ -153,8 +258,8 @@ def analyze_data(df, period, output_dir):
             else:
                 f.write("Not enough data for statistical comparison between women and men.\n\n")
 
-        # Subgroup analysis: Sex, Institution, Fellowship
-        subgroup_vars = [('sex', 'Sex'), ('institution', 'Institution'), ('fellowship', 'Fellowship')]
+        # Subgroup analysis: Sex and Fellowship (removed institution-level stats per request)
+        subgroup_vars = [('sex', 'Sex'), ('fellowship', 'Fellowship')]
         for col, label in subgroup_vars:
             if col in df.columns:
                 f.write(f"\n--- Subgroup Analysis: {label} ---\n")
@@ -187,29 +292,45 @@ def analyze_data(df, period, output_dir):
                         f.write("Not enough data for t-test between Academic and Private groups.\n\n")
 
         if save_plots:
-            # Generate Plots
-            # Box plot
-            plt.figure(figsize=(8, 6))
-            sns.boxplot(x='post_residency_career_type', y='total_publications', 
-                       data=df, palette={'Academic': "#2d4b8f", 'Private': '#c43a39'})
-            plt.xlabel('Career Type', fontsize=12)
-            plt.ylabel('Publication Count', fontsize=12)
-            plt.title(f'Publication Distribution\n{period.replace("_", " ").title()}', fontsize=14)
-            plt.savefig(os.path.join(output_dir, 'box_plot_publication_distribution.png'))
-            plt.tight_layout()
-            pdf.savefig()
-            plt.close()
+            # Combined Figure: 1A = boxplot (display-only remove extreme outlier), 1B = probability scatter (display-only remove points >65)
+            fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
-            # Probability plot
-            plt.figure(figsize=(8, 6))
-            plt.scatter(df['total_publications'], df['predicted_prob'], alpha=0.5)
-            plt.xlabel('Publication Count', fontsize=12)
-            plt.ylabel('Predicted Probability of Academic Career', fontsize=12)
-            plt.title('Publication Count vs\nAcademic Career Probability', fontsize=14)
-            plt.savefig(os.path.join(output_dir, 'probability_plot_count_vs_career.png'))
+            # Boxplot (1A) - for display, hide extreme outliers above a visualization threshold (e.g., 65)
+            # Create a copy for plotting so we don't alter df
+            plot_df = df.copy()
+            # Mark values above threshold as NaN for the boxplot visualization only
+            plot_df['total_publications_plot'] = plot_df['total_publications'].where(plot_df['total_publications'] <= 95, np.nan)
+            sns.boxplot(x='post_residency_career_type', y='total_publications_plot', data=plot_df, palette={'Academic': "#2d4b8f", 'Private': '#c43a39'}, ax=axes[0])
+            # Overlay the full-data small markers for the inliers (so outlier isn't shown)
+            # sns.stripplot(x='post_residency_career_type', y='total_publications', data=plot_df[plot_df['total_publications'] <= 125], color='black', alpha=0.4, jitter=True, ax=axes[0])
+            axes[0].set_xlabel('Career Type')
+            axes[0].set_ylabel('Publication Count')
+            axes[0].set_title('Publication Distribution (During Residency)')
+            # Add Mann-Whitney U test p-value annotation
+            from scipy.stats import mannwhitneyu
+            acad = df[df['post_residency_career_type'] == 'Academic']['total_publications']
+            priv = df[df['post_residency_career_type'] == 'Private']['total_publications']
+            if len(acad) > 1 and len(priv) > 1:
+                stat, p_val = mannwhitneyu(acad, priv, alternative='greater')
+                axes[0].text(0.5, 0.92, f"p = {p_val:.4f}", transform=axes[0].transAxes, ha='center', va='top', fontsize=10, color='black')
+            else:
+                axes[0].text(0.5, 0.92, "Mann-Whitney U: N/A", transform=axes[0].transAxes, ha='center', va='top', fontsize=10, color='black')
+            max_actual = df['total_publications'].max()
+            
+            # Probability plot (1B) - remove plotted points with publications > viz_threshold
+            prob_df = df[df['total_publications'] <= 65]
+            axes[1].scatter(prob_df['total_publications'], prob_df['predicted_prob'], alpha=0.5)
+            axes[1].set_xlabel('Publication Count')
+            axes[1].set_ylabel('Predicted Probability')
+            axes[1].set_title('Probability of Pursuing an Academic Career Based on Research Productivity')
+            # axes[1].set_ylim(-0.02, 1.02)
+
             plt.tight_layout()
-            pdf.savefig()
-            plt.close()
+            # Save combined figure both as PNG and into the PDF
+            combined_png = os.path.join(output_dir, 'figure1_combined_box_prob.png')
+            fig.savefig(combined_png, dpi=150)
+            pdf.savefig(fig)
+            plt.close(fig)
 
             # Plot 2: ROC Curve
             plt.figure(figsize=(8, 6))
@@ -223,7 +344,87 @@ def analyze_data(df, period, output_dir):
             plt.title('ROC Curve for Publication Count\nvs Academic Career', fontsize=14)
             plt.legend(loc="lower right")
 
-            # Additional Plots: Boxplots by Sex, Institution, Fellowship
+        # Add publication rate plots for post-residency data
+        if 'publications_per_year' in df.columns and period == 'post_residency':
+            # Boxplot of publication rates
+            plt.figure(figsize=(8, 6))
+            sns.boxplot(x='post_residency_career_type', y='publications_per_year', 
+                       data=df, palette={'Academic': "#2d4b8f", 'Private': '#c43a39'})
+            plt.xlabel('Career Type', fontsize=12)
+            plt.ylabel('Publications per Year', fontsize=12)
+            plt.title('Publication Rate (Pubs/Year) by Career Type\nTime-Controlled Analysis', fontsize=14)
+            plt.tight_layout()
+            rate_boxplot_png = os.path.join(output_dir, 'figure4_publication_rates_boxplot.png')
+            plt.savefig(rate_boxplot_png, dpi=150)
+            pdf.savefig()
+            plt.close()
+
+            # Scatter plot: Publication rate vs years post-graduation
+            fig, ax = plt.subplots(figsize=(10, 6))
+            academic_df = df[df['post_residency_career_type'] == 'Academic']
+            private_df = df[df['post_residency_career_type'] == 'Private']
+            ax.scatter(academic_df['years_post_graduation'], academic_df['publications_per_year'],
+                      alpha=0.6, s=60, c='#2d4b8f', label='Academic', edgecolors='black', linewidth=0.5)
+            ax.scatter(private_df['years_post_graduation'], private_df['publications_per_year'],
+                      alpha=0.6, s=60, c='#c43a39', label='Private', edgecolors='black', linewidth=0.5)
+            # Add trend lines
+            if len(academic_df) > 1:
+                z_academic = np.polyfit(academic_df['years_post_graduation'], academic_df['publications_per_year'], 1)
+                p_academic = np.poly1d(z_academic)
+                x_line = np.linspace(df['years_post_graduation'].min(), df['years_post_graduation'].max(), 100)
+                ax.plot(x_line, p_academic(x_line), "#2d4b8f", linestyle='--', linewidth=2, label='Academic trend')
+            if len(private_df) > 1:
+                z_private = np.polyfit(private_df['years_post_graduation'], private_df['publications_per_year'], 1)
+                p_private = np.poly1d(z_private)
+                x_line = np.linspace(df['years_post_graduation'].min(), df['years_post_graduation'].max(), 100)
+                ax.plot(x_line, p_private(x_line), "#c43a39", linestyle='--', linewidth=2, label='Private trend')
+            ax.set_xlabel('Years Post-Graduation', fontsize=12)
+            ax.set_ylabel('Publications per Year', fontsize=12)
+            ax.set_title('Publication Rate vs Time Since Graduation', fontsize=14)
+            ax.legend()
+            ax.grid(alpha=0.3)
+            plt.tight_layout()
+            rate_scatter_png = os.path.join(output_dir, 'publication_rate_vs_years.png')
+            plt.savefig(rate_scatter_png, dpi=150)
+            pdf.savefig()
+            plt.close()
+
+            # Publication distribution (post-residency) by career type
+            try:
+                plt.figure(figsize=(8, 6))
+                # Hide boxplot fliers (light gray dots) and overlay hollow circle markers
+                sns.boxplot(x='post_residency_career_type', y='total_publications', data=df,
+                            palette={'Academic': "#2d4b8f", 'Private': '#c43a39'}, showfliers=False)
+                # Compute outliers (1.5 * IQR rule) per group and plot ONLY those as hollow circles
+                groups = list(df['post_residency_career_type'].unique())
+                for i, grp in enumerate(groups):
+                    grp_values = df.loc[df['post_residency_career_type'] == grp, 'total_publications']
+                    if grp_values.empty:
+                        continue
+                    q1 = grp_values.quantile(0.25)
+                    q3 = grp_values.quantile(0.75)
+                    iqr = q3 - q1
+                    lower = q1 - 1.5 * iqr
+                    upper = q3 + 1.5 * iqr
+                    outliers = grp_values[(grp_values < lower) | (grp_values > upper)]
+                    if not outliers.empty:
+                        x = np.full(len(outliers), i)
+                        plt.scatter(x, outliers.values, facecolors='none', edgecolors='black', s=36, linewidths=0.8, zorder=3)
+                plt.xlabel('Career Type', fontsize=12)
+                plt.ylabel('Publication Count', fontsize=12)
+                plt.title('Publication Distribution \n Post Residency', fontsize=14)
+                plt.tight_layout()
+                # save standalone PNG for Figure 3 and add to PDF
+                fig3_png = os.path.join(output_dir, 'figure3_post_residency_boxplot.png')
+                # Save high-quality PNG for publication
+                plt.savefig(fig3_png, dpi=300, bbox_inches='tight')
+                pdf.savefig()
+                plt.close()
+            except Exception:
+                # If plotting fails, continue without stopping analysis
+                pass
+
+            # Additional Plots: Boxplots by Sex and Fellowship (institution-level plots removed)
             if 'sex' in df.columns:
                 plt.figure(figsize=(8, 6))
                 sns.boxplot(x='sex', y='total_publications', hue='post_residency_career_type',
@@ -235,21 +436,6 @@ def analyze_data(df, period, output_dir):
                 plt.tight_layout()
                 pdf.savefig()
                 plt.close()
-
-            if 'institution' in df.columns:
-                n_institutions = df['institution'].nunique()
-                if n_institutions <= 50:
-                    plt.figure(figsize=(max(10, n_institutions), 6))
-                    sns.boxplot(x='institution', y='total_publications', hue='post_residency_career_type',
-                                data=df, palette={'Academic': "#2d4b8f", 'Private': '#c43a39'})
-                    plt.xlabel('Institution', fontsize=12)
-                    plt.ylabel('Publication Count', fontsize=12)
-                    plt.title(f'Publication Count by Institution and Career Type\n{period.replace("_", " ").title()}', fontsize=14)
-                    plt.xticks(rotation=45, ha='right')
-                    plt.legend(title='Career Type')
-                    plt.tight_layout()
-                    pdf.savefig()
-                    plt.close()
 
             if 'fellowship' in df.columns:
                 plt.figure(figsize=(8, 6))
@@ -354,7 +540,6 @@ def main():
         summary_df = pd.DataFrame(summary_rows)
         summary_df.to_csv(os.path.join(output_dir, 'table1_summary.csv'), index=False)
 
-        # Export best single graph: Boxplot of during-residency publications by career path
         plt.figure(figsize=(8, 6))
         sns.boxplot(x='post_residency_career_type', y='total_publications', data=df_during, palette={'Academic': "#2d4b8f", 'Private': '#c43a39'})
         sns.stripplot(x='post_residency_career_type', y='total_publications', data=df_during, color='black', alpha=0.4, jitter=True)
@@ -365,11 +550,9 @@ def main():
         plt.savefig(os.path.join(output_dir, 'boxplot_during_publications.png'))
         plt.close()
 
-        # Perform analysis for both periods
         during_stats, during_plots = analyze_data(df_during, 'during_residency', output_dir)
         post_stats, post_plots = analyze_data(df_post, 'post_residency', output_dir)
 
-        # Pearson correlation between during- and post-residency publication counts (matched by resident_id)
         if 'resident_id' in df_during.columns and 'resident_id' in df_post.columns:
             merged = pd.merge(df_during[['resident_id', 'total_publications']],
                              df_post[['resident_id', 'total_publications']],
@@ -381,7 +564,7 @@ def main():
                 labelx='During Residency',
                 labely='Post Residency')
             print(pearson_text)
-            # Optionally, write to a file
+
             with open(os.path.join(output_dir, 'pearson_correlation.txt'), 'w') as pf:
                 pf.write(pearson_text)
 
@@ -392,6 +575,18 @@ def main():
         print("\nPost Residency Analysis:")
         print(f"Statistics: {post_stats}")
         print(f"Plots: {post_plots}")
+        # Write figure captions mapping file
+        captions_path = os.path.join(output_dir, 'figure_captions.md')
+        try:
+            with open(captions_path, 'w') as cf:
+                cf.write("# Figure captions and filenames\n\n")
+                cf.write("Figure 1 (A,B): figure1_combined_box_prob.png - (A) Boxplot showing the distribution of publication counts during residency by career path; (B) Scatter plot of total publication counts during residency versus predicted probability of pursuing an academic career.\n\n")
+                cf.write("Figure 2: violinplot_during_publications.png - Violin plot illustrating the distribution and density of publication counts during residency for academic and private career paths.\n\n")
+                cf.write("Figure 3: figure3_post_residency_boxplot.png - Boxplot showing the distribution of publication counts after residency by career path (academic versus private).\n\n")
+                cf.write("Figure 4: figure4_publication_rates_boxplot.png - Publication rate (publications per year) by career type (time-controlled).\n")
+            print(f"Figure captions saved to: {captions_path}")
+        except Exception:
+            pass
         
     except Exception as e:
         print(f"Error: {str(e)}")
@@ -399,4 +594,5 @@ def main():
         print(f"Looking for files at: {post_csv_path} and {during_csv_path}")
 
 if __name__ == "__main__":
+    main()
     main()

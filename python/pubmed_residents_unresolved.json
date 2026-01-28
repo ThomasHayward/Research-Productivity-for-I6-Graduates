@@ -1,0 +1,22 @@
+[
+  {
+    "resident_id": 14,
+    "resident_name": "Maureen A McKiern",
+    "author_id": null,
+    "match_year": "2017/07/01",
+    "grad_year": 2023,
+    "query": "(McKiern M[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (McKiern, M.[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Maureen McKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (M. McKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (McKiern, Maureen[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (MMcKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (McKiern MA[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (McKiern, M.A.[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Maureen A McKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Maureen A. McKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (M.A. McKiern[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (McKiern, Maureen A[AUTHOR]) AND (2017/07/01:3000[Date - Publication])",
+    "reason": "no_valid_publications",
+    "skipped_missing_fields": 0
+  },
+  {
+    "resident_id": 54,
+    "resident_name": "Anne H Xue",
+    "author_id": null,
+    "match_year": "2017/07/01",
+    "grad_year": 2023,
+    "query": "(Xue A[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Xue, A.[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Anne Xue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (A. Xue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Xue, Anne[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (AXue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Xue AH[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Xue, A.H.[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Anne H Xue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Anne H. Xue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (A.H. Xue[AUTHOR]) AND (2017/07/01:3000[Date - Publication]) OR (Xue, Anne H[AUTHOR]) AND (2017/07/01:3000[Date - Publication])",
+    "reason": "no_valid_publications",
+    "skipped_missing_fields": 0
+  }
+]

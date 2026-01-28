@@ -1,0 +1,602 @@
+{
+  "summary": {
+    "total_residents": 19,
+    "residents_processed": 19,
+    "total_papers": 75,
+    "papers_found": 70,
+    "papers_missing": 5
+  },
+  "residents": {
+    "James Bailey": {
+      "actions": {
+        "KEEP": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Long-Term Cardiovascular Risk and Management of Patients Recorded in Primary Care With Unattributed Chest Pain: An Electronic Health Record Study.",
+              "journal": "Journal of the American Heart Association",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Jared P Beller": {
+      "actions": {
+        "DELETE": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Acousto-optic modulators integrated on-chip.",
+              "journal": "Light, science & applications",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Paul J Devlin": {
+      "actions": {
+        "KEEP": {
+          "total": 2,
+          "found": 0,
+          "missing": 2,
+          "papers": [
+            {
+              "title": "Ischemic dual papillary muscle rupture in a postpartum patient with vascular Ehlers-Danlos syndrome.",
+              "journal": "JTCVS techniques",
+              "status": "MISSING"
+            },
+            {
+              "title": "Four-Dimensional Flow Magnetic Resonance Imaging Evaluation of Post-Ross David Procedure With Valve Repair.",
+              "journal": "Annals of thoracic surgery short reports",
+              "status": "MISSING"
+            }
+          ]
+        }
+      }
+    },
+    "Andrew E Everett": {
+      "actions": {
+        "DELETE": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Simplified technique for Malyugin ring extraction.",
+              "journal": "Journal of cataract and refractive surgery",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Kevin E Hodges": {
+      "actions": {
+        "DELETE": {
+          "total": 6,
+          "found": 6,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Projected Future Changes in Tropical Cyclones Using the CMIP6 HighResMIP Multimodel Ensemble.",
+              "journal": "Geophysical research letters",
+              "status": "FOUND"
+            },
+            {
+              "title": "More meteorological events that drive compound coastal flooding are projected under climate change.",
+              "journal": "Communications earth & environment",
+              "status": "FOUND"
+            },
+            {
+              "title": "Centennial relationships between ocean temperature and Atlantic puffin production reveal shifting decennial trends.",
+              "journal": "Global change biology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Receipt of Telehealth Services, Receipt and Retention of Medications for Opioid Use Disorder, and Medically Treated Overdose Among Medicare Beneficiaries Before and During the COVID-19 Pandemic.",
+              "journal": "JAMA psychiatry",
+              "status": "FOUND"
+            },
+            {
+              "title": "A potential explanation for the global increase in tropical cyclone rapid intensification.",
+              "journal": "Nature communications",
+              "status": "FOUND"
+            },
+            {
+              "title": "Author Correction: A potential explanation for the global increase in tropical cyclone rapid intensification.",
+              "journal": "Nature communications",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Michael Ibrahim": {
+      "actions": {
+        "DELETE": {
+          "total": 4,
+          "found": 4,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Broken Spinal Needle in a Morbidly Obese Parturient Presenting for Urgent Cesarean Section.",
+              "journal": "Case reports in anesthesiology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Liposomal compared to 0.25% bupivacaine in patients undergoing hemorrhoidectomy: A pre- and post-implementation quality improvement evaluation.",
+              "journal": "Journal of clinical anesthesia",
+              "status": "FOUND"
+            },
+            {
+              "title": "Tumor Lysis Syndrome in an Elderly Male With Newly Diagnosed Large Cell B-Lymphoma Despite Prophylactic Treatment.",
+              "journal": "Cureus",
+              "status": "FOUND"
+            },
+            {
+              "title": "Clinical Characteristics, MRI Findings, Disease Progression, and Management of Neuro-Beh\u00e7et's Disease: A Retrospective Study in Lebanon.",
+              "journal": "Journal of clinical medicine",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Kyla D Joubery": {
+      "actions": {
+        "DELETE": {
+          "total": 1,
+          "found": 0,
+          "missing": 1,
+          "papers": [
+            {
+              "title": "Abdominal Approaches to Rectal Prolapse.",
+              "journal": "Clinics in colon and rectal surgery",
+              "status": "MISSING"
+            }
+          ]
+        }
+      }
+    },
+    "Xiaoying Lou": {
+      "actions": {
+        "DELETE": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "miR?1299/NOTCH3/TUG1 feedback loop contributes to the malignant proliferation of ovarian cancer.",
+              "journal": "Oncology reports",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "John L Murray": {
+      "actions": {
+        "ADD": {
+          "total": 2,
+          "found": 1,
+          "missing": 1,
+          "papers": [
+            {
+              "title": "High-Risk Pulmonary Embolism: Embolectomy and Extracorporeal Membrane Oxygenation",
+              "journal": "Seminars in Respiratory and Critical Care Medicine",
+              "status": "FOUND"
+            },
+            {
+              "title": "Characteristics and intraoperative treatments associated with head and neck free tissue transfer complications and failures",
+              "journal": "Otolaryngology--head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery",
+              "status": "MISSING"
+            }
+          ]
+        }
+      }
+    },
+    "Viral C Patel": {
+      "actions": {
+        "ADD": {
+          "total": 1,
+          "found": 0,
+          "missing": 1,
+          "papers": [
+            {
+              "title": "Relationships between time use and obesity in a representative sample of Americans",
+              "journal": "Obesity (Silver Spring, Md.)",
+              "status": "MISSING"
+            }
+          ]
+        },
+        "KEEP": {
+          "total": 4,
+          "found": 4,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Current Readings on Outcomes After Off-Pump Coronary Artery Bypass Grafting.",
+              "journal": "Seminars in thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Comparison of Diagnostic Accuracy of Digital Plethysmography Versus Duplex Ultrasound in Detecting Radial Artery Occlusion After ransradial Access.",
+              "journal": "Cardiovascular revascularization medicine : including molecular interventions",
+              "status": "FOUND"
+            },
+            {
+              "title": "Oxygen Indications and Utilization in a Diverse, Urban Community Setting.",
+              "journal": "Journal of cardiopulmonary rehabilitation and prevention",
+              "status": "FOUND"
+            },
+            {
+              "title": "Double Switch in Congenitally Corrected Transposition of the Great Arteries With Incomplete Atrioventricular Septal Defect, Ebsteinoid Tricuspid Valve, Ventricular Outflow Tract Obstructions, and Multiple VSDs.",
+              "journal": "World journal for pediatric & congenital heart surgery",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Nicholas John Shea": {
+      "actions": {
+        "KEEP": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Impact of Septal Myectomy Volume on Mitral-Valve Replacement Rate in Hypertrophic Cardiomyopathy Patients.",
+              "journal": "Cardiology",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "William B Weir": {
+      "actions": {
+        "KEEP": {
+          "total": 7,
+          "found": 7,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Management of retrograde intraoperative Type A aortic dissection from descending thoracic aortic injury.",
+              "journal": "Interactive cardiovascular and thoracic surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Ex Vivo Heart Perfusion for 72 Hours Using Plasma Cross Circulation.",
+              "journal": "ASAIO journal (American Society for Artificial Internal Organs : 1992)",
+              "status": "FOUND"
+            },
+            {
+              "title": "Invited Commentary.",
+              "journal": "The Annals of thoracic surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Commentary: Cardiothoracic surgery and COVID: Must we coexist?",
+              "journal": "JTCVS open",
+              "status": "FOUND"
+            },
+            {
+              "title": "Endometriosis first presenting in pleural fluid cytology.",
+              "journal": "Diagnostic cytopathology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Extended perioperative use of the ProtekDuo cannula for drainage in central venopulmonary-aortic ECMO for bilateral orthotopic lung transplantation.",
+              "journal": "Artificial organs",
+              "status": "FOUND"
+            },
+            {
+              "title": "A 72-Year-Old Man With Innumerable Bilateral Pulmonary Nodules After Lung Transplantation.",
+              "journal": "Chest",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "James A Miller": {
+      "actions": {
+        "KEEP": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Routine chest radiography after thoracostomy tube removal and during postoperative follow-up is not necessary after lung resection.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Karolis Bauza": {
+      "actions": {
+        "KEEP": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Identifying and mitigating risk of postcardiotomy cardiogenic shock in patients with ischemic and nonischemic cardiomyopathy.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Ernest G Chan": {
+      "actions": {
+        "KEEP": {
+          "total": 7,
+          "found": 7,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Mortality and cost of post-cardiotomy extracorporeal support in the United States.",
+              "journal": "Perfusion",
+              "status": "FOUND"
+            },
+            {
+              "title": "Predicting post-lung transplant survival in systemic sclerosis using CT-derived features from preoperative chest CT scans.",
+              "journal": "European radiology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Correction: Predicting post-lung transplant survival in systemic sclerosis using CT-derived features from preoperative chest CT scans.",
+              "journal": "European radiology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Pneumatosis Intestinalis and Pneumoperitoneum After Lung Transplantation: Single-Center Experience and Systematic Review.",
+              "journal": "Journal of transplantation",
+              "status": "FOUND"
+            },
+            {
+              "title": "Subcutaneous emphysema in patients undergoing robotic cardiac surgery: risk factors and clinical outcome.",
+              "journal": "Journal of robotic surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Comparison of Robot-Assisted Versus Video-Assisted Thoracoscopic Segmentectomy: A Single-Institution Propensity-Matched Study.",
+              "journal": "Innovations (Philadelphia, Pa.)",
+              "status": "FOUND"
+            },
+            {
+              "title": "Lung transplant bridging strategies in patients with idiopathic pulmonary fibrosis: An SRTR database analysis.",
+              "journal": "JHLT open",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Hanjay Wang": {
+      "actions": {
+        "DELETE": {
+          "total": 1,
+          "found": 1,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "The Effect of Sodium Tanshinone IIA Sulfate and Simvastatin on Elevated Serum Levels of Inflammatory Markers in Patients with Coronary Heart Disease: A Study Protocol for a Randomized Controlled Trial.",
+              "journal": "Evidence-based complementary and alternative medicine : eCAM",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Dongning Zhang": {
+      "actions": {
+        "KEEP": {
+          "total": 3,
+          "found": 3,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Analysis of Outcomes of Reoperative Fundoplication in More than 500 Patients after Failed Primary Antireflux Surgery: Experience Over Two Decades.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Long-term sex-based outcomes after surgery for acute type A aortic dissection: Meta-analysis of reconstructed time-to-event data.",
+              "journal": "American journal of surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Macrovasculature and positron emission tomography (PET) standardized uptake value in patients with lung cancer.",
+              "journal": "Medical physics",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Saket Singh": {
+      "actions": {
+        "DELETE": {
+          "total": 15,
+          "found": 15,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Renal neuroendocrine tumour with preoperative diagnostic dilemma.",
+              "journal": "BMJ case reports",
+              "status": "FOUND"
+            },
+            {
+              "title": "Effect of ureteric access sheath on outcomes of retrograde intrarenal surgery for renal stone disease: a randomized controlled trial.",
+              "journal": "World journal of urology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Utility of WhatsApp in emergency urological practice: An interrater reliability study.",
+              "journal": "Indian journal of urology : IJU : journal of the Urological Society of India",
+              "status": "FOUND"
+            },
+            {
+              "title": "Con: the FloTrac device should not be used to follow cardiac output in cardiac surgical patients.",
+              "journal": "Journal of cardiothoracic and vascular anesthesia",
+              "status": "FOUND"
+            },
+            {
+              "title": "Supracardiac total anomalous pulmonary venous connection with severe rheumatic mitral valve disease.",
+              "journal": "Journal of cardiac surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Surgical repair of a submitral aneurysm in a three-year-old child.",
+              "journal": "Journal of cardiac surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "An unusual case of sudden collapse in the immediate postoperative period in a young healthy female with myxofibroma of the maxilla.",
+              "journal": "Case reports in anesthesiology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Cerebral near-infrared spectroscopy in perioperative management of left ventricular assist device and extracorporeal membrane oxygenation patients.",
+              "journal": "Current opinion in anaesthesiology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Optimal perioperative medical management of the vascular surgery patient.",
+              "journal": "Anesthesiology clinics",
+              "status": "FOUND"
+            },
+            {
+              "title": "Moderate Aortic Stenosis and Coronary Artery Bypass Grafting: Clinical Update for the Perioperative Echocardiographer.",
+              "journal": "Journal of cardiothoracic and vascular anesthesia",
+              "status": "FOUND"
+            },
+            {
+              "title": "Large urethral meatal stone: rare cause of acute urinary retention managed with meatotomy and stone retrieval.",
+              "journal": "BMJ case reports",
+              "status": "FOUND"
+            },
+            {
+              "title": "A Rare Cause of Acute Abdomen: Testicular Torsion in an Inguinal Undescended Testis.",
+              "journal": "Urology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Large urethral stone impersonating as penile cancer.",
+              "journal": "BMJ case reports",
+              "status": "FOUND"
+            },
+            {
+              "title": "Comparison of efficacy of three commonly used alpha-blockers as medical expulsive therapy for distal ureter stones: A systematic review and network meta-analysis.",
+              "journal": "International braz j urol : official journal of the Brazilian Society of Urology",
+              "status": "FOUND"
+            },
+            {
+              "title": "Atrophic Kidney-Like Lesion - Case Report of A Provisional Entity with Brief Review of Literature.",
+              "journal": "Turk patoloji dergisi",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    },
+    "Parth Patel": {
+      "actions": {
+        "KEEP": {
+          "total": 15,
+          "found": 15,
+          "missing": 0,
+          "papers": [
+            {
+              "title": "Commentary: Epinephrine's meager benefit in resuscitation illustrates the need for shrewd bedside judgment when resuscitating cardiothoracic surgery patients.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Genetic Variants Associated With Cancer Therapy-Induced Cardiomyopathy.",
+              "journal": "Circulation",
+              "status": "FOUND"
+            },
+            {
+              "title": "Optimizing the Potential for Telehealth in Cardiovascular Care (in the Era of COVID-19): Time Will Tell.",
+              "journal": "The American journal of medicine",
+              "status": "FOUND"
+            },
+            {
+              "title": "Bicuspid aortic valve durability with valve-sparing aortic root replacement: comparison to tricuspid valve.",
+              "journal": "European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Reintervention after valve-sparing aortic root replacement: A comprehensive analysis of 781 David V procedures.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Valve-sparing root replacement versus composite valve graft root replacement: Analysis of more than 1500 patients from 2 aortic centers.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Does Elevated High-Density Lipoprotein Cholesterol Protect Against Cardiovascular Disease?",
+              "journal": "The Journal of clinical endocrinology and metabolism",
+              "status": "FOUND"
+            },
+            {
+              "title": "Long-term outcomes after aortic root replacement for bicuspid aortic valve-associated aneurysm.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Incidence, risk factors, and long-term outcomes associated with permanent pacemaker implantation after aortic root replacement.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Importance of surgeon's experience in practicing valve-sparing aortic root replacement.",
+              "journal": "JTCVS open",
+              "status": "FOUND"
+            },
+            {
+              "title": "Unplanned coronary artery bypass graft in aortic root replacement\u2020.",
+              "journal": "European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Mastering the Learning Curve for Robotic-Assisted Coronary Artery Bypass Surgery.",
+              "journal": "The Annals of thoracic surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Valve-sparing aortic root replacement versus composite valve graft with bioprosthesis in patients under age 50.",
+              "journal": "The Journal of thoracic and cardiovascular surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Reoperative aortic root replacement for prosthetic aortic valve endocarditis: impact of aortic graft.",
+              "journal": "European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery",
+              "status": "FOUND"
+            },
+            {
+              "title": "Clogged Arteries, Safety Net Holes: Treating an Underinsured Patient for Homozygous Familial Hypercholesterolemia With Plasmapheresis.",
+              "journal": "Cureus",
+              "status": "FOUND"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

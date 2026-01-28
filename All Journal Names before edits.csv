@@ -1,0 +1,623 @@
+id,name,specialty,avg_impact_factor,max_impact_factor,ranking
+1,"Case reports in anesthesiology",NULL,NULL,NULL,NULL
+2,"BMJ open",NULL,NULL,NULL,NULL
+3,"Primary health care research & development",NULL,NULL,NULL,NULL
+4,"The International journal of health planning and management",NULL,NULL,NULL,NULL
+5,Pain,NULL,NULL,NULL,NULL
+6,"BMJ mental health",NULL,NULL,NULL,NULL
+7,"BMC medicine",NULL,NULL,NULL,NULL
+8,"PloS one",NULL,NULL,NULL,NULL
+9,"The bone & joint journal",NULL,NULL,NULL,NULL
+10,"Neural networks : the official journal of the International Neural Network Society",NULL,NULL,NULL,NULL
+11,"The British journal of general practice : the journal of the Royal College of General Practitioners",NULL,NULL,NULL,NULL
+12,"Frontiers in veterinary science",NULL,NULL,NULL,NULL
+13,"Surgical endoscopy",NULL,NULL,NULL,NULL
+14,"JAMA ophthalmology",NULL,NULL,NULL,NULL
+15,"Blood advances",NULL,NULL,NULL,NULL
+16,"Rheumatology advances in practice",NULL,NULL,NULL,NULL
+17,"The British journal of surgery",NULL,NULL,NULL,NULL
+18,"Current medical research and opinion",NULL,NULL,NULL,NULL
+19,"Rheumatology (Oxford, England)",NULL,NULL,NULL,NULL
+20,"Journal of zoo and wildlife medicine : official publication of the American Association of Zoo Veterinarians",NULL,NULL,NULL,NULL
+21,"Health services research",NULL,NULL,NULL,NULL
+22,ZooKeys,NULL,NULL,NULL,NULL
+23,"The Lancet regional health. Europe",NULL,NULL,NULL,NULL
+24,"European journal of preventive cardiology",NULL,NULL,NULL,NULL
+25,"Musculoskeletal care",NULL,NULL,NULL,NULL
+26,"Veterinary anaesthesia and analgesia",NULL,NULL,NULL,NULL
+27,"Journal of clinical medicine",NULL,NULL,NULL,NULL
+28,"Entropy (Basel, Switzerland)",NULL,NULL,NULL,NULL
+29,Zootaxa,NULL,NULL,NULL,NULL
+30,"Veterinary medicine and science",NULL,NULL,NULL,NULL
+31,"Annals of surgical oncology",NULL,NULL,NULL,NULL
+32,"Substance abuse treatment, prevention, and policy",NULL,NULL,NULL,NULL
+33,"Clinical chemistry",NULL,NULL,NULL,NULL
+34,"SAGE open medical case reports",NULL,NULL,NULL,NULL
+35,"Journal of chromatography. B, Analytical technologies in the biomedical and life sciences",NULL,NULL,NULL,NULL
+36,"Drug delivery and translational research",NULL,NULL,NULL,NULL
+37,Cureus,NULL,NULL,NULL,NULL
+38,"Frontiers in pharmacology",NULL,NULL,NULL,NULL
+39,"Structural heart : the journal of the Heart Team",NULL,NULL,NULL,NULL
+40,"Indian journal of cancer",NULL,NULL,NULL,NULL
+41,"Dermatology practical & conceptual",NULL,NULL,NULL,NULL
+42,"International journal of heart failure",NULL,NULL,NULL,NULL
+43,"The western journal of emergency medicine",NULL,NULL,NULL,NULL
+44,"Journal of cutaneous pathology",NULL,NULL,NULL,NULL
+45,"The Journal of emergency medicine",NULL,NULL,NULL,NULL
+46,"Journal of orthopaedic case reports",NULL,NULL,NULL,NULL
+47,"JAAD case reports",NULL,NULL,NULL,NULL
+48,"Journal of medicinal chemistry",NULL,NULL,NULL,NULL
+49,"Current drug targets",NULL,NULL,NULL,NULL
+50,"The Lancet regional health. Western Pacific",NULL,NULL,NULL,NULL
+51,"Journal of obstetrics and gynaecology of India",NULL,NULL,NULL,NULL
+52,"AAPS PharmSciTech",NULL,NULL,NULL,NULL
+53,"Journal of family medicine and primary care",NULL,NULL,NULL,NULL
+54,"World journal for pediatric & congenital heart surgery",NULL,NULL,NULL,NULL
+55,"Journal of robotic surgery",NULL,NULL,NULL,NULL
+56,"Indian journal of surgical oncology",NULL,NULL,NULL,NULL
+57,"JMIR research protocols",NULL,NULL,NULL,NULL
+58,"Neurology India",NULL,NULL,NULL,NULL
+59,"The Indian journal of radiology & imaging",NULL,NULL,NULL,NULL
+60,"Drug development and industrial pharmacy",NULL,NULL,NULL,NULL
+61,"International journal of infectious diseases : IJID : official publication of the International Society for Infectious Diseases",NULL,NULL,NULL,NULL
+62,"Journal for immunotherapy of cancer",NULL,NULL,NULL,NULL
+63,"Journal of cardiopulmonary rehabilitation and prevention",NULL,NULL,NULL,NULL
+64,"Cardiovascular revascularization medicine : including molecular interventions",NULL,NULL,NULL,NULL
+65,"Molecular & cellular proteomics : MCP",NULL,NULL,NULL,NULL
+66,Ecancermedicalscience,NULL,NULL,NULL,NULL
+67,"Indian journal of psychological medicine",NULL,NULL,NULL,NULL
+68,"Future healthcare journal",NULL,NULL,NULL,NULL
+69,"Seminars in thoracic and cardiovascular surgery",NULL,NULL,NULL,NULL
+70,"Pediatric nephrology (Berlin, Germany)",NULL,NULL,NULL,NULL
+71,"The Journal of pediatrics",NULL,NULL,NULL,NULL
+72,"Archives of clinical neuropsychology : the official journal of the National Academy of Neuropsychologists",NULL,NULL,NULL,NULL
+73,"Canadian journal of psychiatry. Revue canadienne de psychiatrie",NULL,NULL,NULL,NULL
+74,"BMJ case reports",NULL,NULL,NULL,NULL
+75,"Expert opinion on drug delivery",NULL,NULL,NULL,NULL
+76,"Journal of Indian Association of Pediatric Surgeons",NULL,NULL,NULL,NULL
+77,"Journal of clinical and diagnostic research : JCDR",NULL,NULL,NULL,NULL
+78,"Pediatric transplantation",NULL,NULL,NULL,NULL
+79,"JTCVS open",NULL,NULL,NULL,NULL
+80,"Multimedia manual of cardiothoracic surgery : MMCTS",NULL,NULL,NULL,NULL
+81,"The Journal of heart and lung transplantation : the official publication of the International Society for Heart Transplantation",NULL,NULL,NULL,NULL
+82,"JTCVS techniques",NULL,NULL,NULL,NULL
+83,"Current cardiology reports",NULL,NULL,NULL,NULL
+84,"Annals of thoracic surgery short reports",NULL,NULL,NULL,NULL
+85,"Future cardiology",NULL,NULL,NULL,NULL
+86,"The Annals of thoracic surgery",NULL,NULL,NULL,NULL
+87,"Journal of thoracic disease",NULL,NULL,NULL,NULL
+88,"Expert review of medical devices",NULL,NULL,NULL,NULL
+89,"The American journal of cardiology",NULL,NULL,NULL,NULL
+90,"The Journal of thoracic and cardiovascular surgery",NULL,NULL,NULL,NULL
+91,"Journal of cataract and refractive surgery",NULL,NULL,NULL,NULL
+92,"The Annals of pharmacotherapy",NULL,NULL,NULL,NULL
+93,"The Journal of animal ecology",NULL,NULL,NULL,NULL
+94,"Nature communications",NULL,NULL,NULL,NULL
+95,"European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery",NULL,NULL,NULL,NULL
+96,"Catheterization and cardiovascular interventions : official journal of the Society for Cardiac Angiography & Interventions",NULL,NULL,NULL,NULL
+97,"European heart journal. Cardiovascular Imaging",NULL,NULL,NULL,NULL
+98,"JAMA psychiatry",NULL,NULL,NULL,NULL
+99,"Journal of cardiac surgery",NULL,NULL,NULL,NULL
+100,"Global change biology",NULL,NULL,NULL,NULL
+101,"Journal of the American Heart Association",NULL,NULL,NULL,NULL
+102,"Communications earth & environment",NULL,NULL,NULL,NULL
+103,"Geophysical research letters",NULL,NULL,NULL,NULL
+104,"HeartRhythm case reports",NULL,NULL,NULL,NULL
+105,Circulation,NULL,NULL,NULL,NULL
+106,"Journal of vascular surgery",NULL,NULL,NULL,NULL
+107,"Journal of cardiac failure",NULL,NULL,NULL,NULL
+108,"Asian cardiovascular & thoracic annals",NULL,NULL,NULL,NULL
+109,"Journal of chest surgery",NULL,NULL,NULL,NULL
+110,Perfusion,NULL,NULL,NULL,NULL
+111,Cardiology,NULL,NULL,NULL,NULL
+112,"Aorta (Stamford, Conn.)",NULL,NULL,NULL,NULL
+113,"Journal of cardiovascular translational research",NULL,NULL,NULL,NULL
+114,"Journal of visualized experiments : JoVE",NULL,NULL,NULL,NULL
+115,"Cardiovascular pathology : the official journal of the Society for Cardiovascular Pathology",NULL,NULL,NULL,NULL
+116,"General thoracic and cardiovascular surgery",NULL,NULL,NULL,NULL
+117,"Scientific reports",NULL,NULL,NULL,NULL
+118,"Cardiology in review",NULL,NULL,NULL,NULL
+119,"Trends in cognitive sciences",NULL,NULL,NULL,NULL
+120,"Australasian philosophical review",NULL,NULL,NULL,NULL
+121,"Philosophical transactions of the Royal Society of London. Series B, Biological sciences",NULL,NULL,NULL,NULL
+122,"Frontiers in psychology",NULL,NULL,NULL,NULL
+123,"Cognitive science",NULL,NULL,NULL,NULL
+124,"Mind & language",NULL,NULL,NULL,NULL
+125,"The British journal for the philosophy of science",NULL,NULL,NULL,NULL
+126,"Quarterly journal of experimental psychology (2006)",NULL,NULL,NULL,NULL
+127,"Journal of vascular surgery cases and innovative techniques",NULL,NULL,NULL,NULL
+128,"The cardiothoracic surgeon",NULL,NULL,NULL,NULL
+129,"Echocardiography (Mount Kisco, N.Y.)",NULL,NULL,NULL,NULL
+130,"Clinical transplantation",NULL,NULL,NULL,NULL
+131,"American journal of surgery",NULL,NULL,NULL,NULL
+132,"The Journal of invasive cardiology",NULL,NULL,NULL,NULL
+133,"Healthcare (Basel, Switzerland)",NULL,NULL,NULL,NULL
+134,"American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",NULL,NULL,NULL,NULL
+135,"Annals of surgery",NULL,NULL,NULL,NULL
+136,"Frontiers in sociology",NULL,NULL,NULL,NULL
+137,"Psychological medicine",NULL,NULL,NULL,NULL
+138,"Clinical hematology international",NULL,NULL,NULL,NULL
+139,Chest,NULL,NULL,NULL,NULL
+140,"Breathe (Sheffield, England)",NULL,NULL,NULL,NULL
+141,"Radiographics : a review publication of the Radiological Society of North America, Inc",NULL,NULL,NULL,NULL
+142,"Bone marrow transplantation",NULL,NULL,NULL,NULL
+143,"Federal practitioner : for the health care professionals of the VA, DoD, and PHS",NULL,NULL,NULL,NULL
+144,"Science advances",NULL,NULL,NULL,NULL
+145,"The European respiratory journal",NULL,NULL,NULL,NULL
+146,"AJNR. American journal of neuroradiology",NULL,NULL,NULL,NULL
+147,"European journal of oncology nursing : the official journal of European Oncology Nursing Society",NULL,NULL,NULL,NULL
+148,"Oral and maxillofacial surgery clinics of North America",NULL,NULL,NULL,NULL
+149,"Academic medicine :, journal of the Association of American Medical Colleges..",NULL,NULL,NULL,NULL
+150,"The Lancet. Haematology",NULL,NULL,NULL,NULL
+151,"Radiology case reports",NULL,NULL,NULL,NULL
+152,"Infection control and hospital epidemiology",NULL,NULL,NULL,NULL
+153,"Insights into imaging",NULL,NULL,NULL,NULL
+154,"Frontiers in behavioral neuroscience",NULL,NULL,NULL,NULL
+155,"Microbiology spectrum",NULL,NULL,NULL,NULL
+156,"International journal of environmental research and public health",NULL,NULL,NULL,NULL
+157,"Hydrogeology journal",NULL,NULL,NULL,NULL
+158,"Transplantation and cellular therapy",NULL,NULL,NULL,NULL
+159,"Children (Basel, Switzerland)",NULL,NULL,NULL,NULL
+160,"Schizophrenia bulletin",NULL,NULL,NULL,NULL
+161,"Globalization and health",NULL,NULL,NULL,NULL
+162,"Pharmacology research & perspectives",NULL,NULL,NULL,NULL
+163,Trials,NULL,NULL,NULL,NULL
+164,"Nutrition (Burbank, Los Angeles County, Calif.)",NULL,NULL,NULL,NULL
+165,"BMJ (Clinical research ed.)",NULL,NULL,NULL,NULL
+166,"The breast journal",NULL,NULL,NULL,NULL
+167,"Acta paediatrica (Oslo, Norway : 1992)",NULL,NULL,NULL,NULL
+168,"The Journal of antimicrobial chemotherapy",NULL,NULL,NULL,NULL
+169,Haematologica,NULL,NULL,NULL,NULL
+170,"BMC infectious diseases",NULL,NULL,NULL,NULL
+171,"Cerebral cortex (New York, N.Y. : 1991)",NULL,NULL,NULL,NULL
+172,"Antimicrobial agents and chemotherapy",NULL,NULL,NULL,NULL
+173,"Journal of neurosurgery",NULL,NULL,NULL,NULL
+174,"Open forum infectious diseases",NULL,NULL,NULL,NULL
+175,MedChemComm,NULL,NULL,NULL,NULL
+176,"Global health, science and practice",NULL,NULL,NULL,NULL
+177,"Intellectual and developmental disabilities",NULL,NULL,NULL,NULL
+178,"Proceedings of the National Academy of Sciences of the United States of America",NULL,NULL,NULL,NULL
+179,"Drug discovery today",NULL,NULL,NULL,NULL
+180,"Cell systems",NULL,NULL,NULL,NULL
+181,"The Journal of surgical research",NULL,NULL,NULL,NULL
+182,"Journal of applied research in intellectual disabilities : JARID",NULL,NULL,NULL,NULL
+183,"Sexually transmitted infections",NULL,NULL,NULL,NULL
+184,"The Journal of sports medicine and physical fitness",NULL,NULL,NULL,NULL
+185,"IEEE transactions on medical imaging",NULL,NULL,NULL,NULL
+186,"Journal of the American Society of Echocardiography : official publication of the American Society of Echocardiography",NULL,NULL,NULL,NULL
+187,"Cancer gene therapy",NULL,NULL,NULL,NULL
+188,"Translational lung cancer research",NULL,NULL,NULL,NULL
+189,"Frontiers in medicine",NULL,NULL,NULL,NULL
+190,"International journal of surgery (London, England)",NULL,NULL,NULL,NULL
+191,"Revista espanola de enfermedades digestivas",NULL,NULL,NULL,NULL
+192,"Biochemical pharmacology",NULL,NULL,NULL,NULL
+193,"Respiratory research",NULL,NULL,NULL,NULL
+194,"Oncology reports",NULL,NULL,NULL,NULL
+195,Cancers,NULL,NULL,NULL,NULL
+196,"Frontiers in oncology",NULL,NULL,NULL,NULL
+197,"Frontiers in genetics",NULL,NULL,NULL,NULL
+198,Cells,NULL,NULL,NULL,NULL
+199,"Communications biology",NULL,NULL,NULL,NULL
+200,"Scandinavian journal of gastroenterology",NULL,NULL,NULL,NULL
+201,"Frontiers in cell and developmental biology",NULL,NULL,NULL,NULL
+202,"BME frontiers",NULL,NULL,NULL,NULL
+203,"The Lancet. Digital health",NULL,NULL,NULL,NULL
+204,"Journal of inflammation research",NULL,NULL,NULL,NULL
+205,"Computers in biology and medicine",NULL,NULL,NULL,NULL
+206,"Gastroenterology report",NULL,NULL,NULL,NULL
+207,"Innovations (Philadelphia, Pa.)",NULL,NULL,NULL,NULL
+208,"OncoTargets and therapy",NULL,NULL,NULL,NULL
+209,Aging,NULL,NULL,NULL,NULL
+210,"Journal of biomechanical engineering",NULL,NULL,NULL,NULL
+211,"Redox biology",NULL,NULL,NULL,NULL
+212,"Annals of translational medicine",NULL,NULL,NULL,NULL
+213,"Laboratory investigation; a journal of technical methods and pathology",NULL,NULL,NULL,NULL
+214,"Vascular pharmacology",NULL,NULL,NULL,NULL
+215,"Seminars in respiratory and critical care medicine",NULL,NULL,NULL,NULL
+216,"Urology annals",NULL,NULL,NULL,NULL
+217,"Artificial organs",NULL,NULL,NULL,NULL
+218,"JACC. Advances",NULL,NULL,NULL,NULL
+219,"Journal of cardiothoracic and vascular anesthesia",NULL,NULL,NULL,NULL
+220,"JACC. Heart failure",NULL,NULL,NULL,NULL
+221,"Journal of the American College of Cardiology",NULL,NULL,NULL,NULL
+222,"Molecular medicine reports",NULL,NULL,NULL,NULL
+223,"Seminars in thoracic and cardiovascular surgery. Pediatric cardiac surgery annual",NULL,NULL,NULL,NULL
+224,"Blood coagulation & fibrinolysis : an international journal in haemostasis and thrombosis",NULL,NULL,NULL,NULL
+225,"Journal of cardiovascular computed tomography",NULL,NULL,NULL,NULL
+226,"Journal of cardiothoracic surgery",NULL,NULL,NULL,NULL
+227,"Annals of cardiothoracic surgery",NULL,NULL,NULL,NULL
+228,"Journal of cardiovascular electrophysiology",NULL,NULL,NULL,NULL
+229,"Heart & lung : the journal of critical care",NULL,NULL,NULL,NULL
+230,"International journal of molecular sciences",NULL,NULL,NULL,NULL
+231,"ACS applied materials & interfaces",NULL,NULL,NULL,NULL
+232,"Current issues in molecular biology",NULL,NULL,NULL,NULL
+233,"Marine environmental research",NULL,NULL,NULL,NULL
+234,"Frontiers in artificial intelligence",NULL,NULL,NULL,NULL
+235,"Diagnostics (Basel, Switzerland)",NULL,NULL,NULL,NULL
+236,"Medicines (Basel, Switzerland)",NULL,NULL,NULL,NULL
+237,Biomedicines,NULL,NULL,NULL,NULL
+238,"Journal of the science of food and agriculture",NULL,NULL,NULL,NULL
+239,"European journal of case reports in internal medicine",NULL,NULL,NULL,NULL
+240,"Health services insights",NULL,NULL,NULL,NULL
+241,"The Science of the total environment",NULL,NULL,NULL,NULL
+242,"Antibiotics (Basel, Switzerland)",NULL,NULL,NULL,NULL
+243,"Psychological reports",NULL,NULL,NULL,NULL
+244,"Marine pollution bulletin",NULL,NULL,NULL,NULL
+245,"Neurourology and urodynamics",NULL,NULL,NULL,NULL
+246,"Antioxidants (Basel, Switzerland)",NULL,NULL,NULL,NULL
+247,Polymers,NULL,NULL,NULL,NULL
+248,Nutrients,NULL,NULL,NULL,NULL
+249,"International journal of dental hygiene",NULL,NULL,NULL,NULL
+250,"Journal of the Belgian Society of Radiology",NULL,NULL,NULL,NULL
+251,"Foods (Basel, Switzerland)",NULL,NULL,NULL,NULL
+252,"Molecules (Basel, Switzerland)",NULL,NULL,NULL,NULL
+253,"Photodiagnosis and photodynamic therapy",NULL,NULL,NULL,NULL
+254,"Mathematical biosciences and engineering : MBE",NULL,NULL,NULL,NULL
+255,PeerJ,NULL,NULL,NULL,NULL
+256,"Neurological research and practice",NULL,NULL,NULL,NULL
+257,"Cityscape (Washington, D.C.)",NULL,NULL,NULL,NULL
+258,"Advanced drug delivery reviews",NULL,NULL,NULL,NULL
+259,"Journal of Alzheimer's disease : JAD",NULL,NULL,NULL,NULL
+260,"International journal of surgery case reports",NULL,NULL,NULL,NULL
+261,"International journal of pharmaceutics",NULL,NULL,NULL,NULL
+262,Theranostics,NULL,NULL,NULL,NULL
+263,"Laboratory animals",NULL,NULL,NULL,NULL
+264,Pharmaceutics,NULL,NULL,NULL,NULL
+265,"Clinical journal of gastroenterology",NULL,NULL,NULL,NULL
+266,"Acta biomaterialia",NULL,NULL,NULL,NULL
+267,"Behavior research methods",NULL,NULL,NULL,NULL
+268,"Cancer cell",NULL,NULL,NULL,NULL
+269,"Molecular pharmaceutics",NULL,NULL,NULL,NULL
+270,"European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",NULL,NULL,NULL,NULL
+271,"ACG case reports journal",NULL,NULL,NULL,NULL
+272,"Acta medica portuguesa",NULL,NULL,NULL,NULL
+273,"Nanomedicine (London, England)",NULL,NULL,NULL,NULL
+274,"Journal of palliative medicine",NULL,NULL,NULL,NULL
+275,"Anesthesiology clinics",NULL,NULL,NULL,NULL
+276,"Current stem cell research & therapy",NULL,NULL,NULL,NULL
+277,"Behavioural and cognitive psychotherapy",NULL,NULL,NULL,NULL
+278,"ASAIO journal (American Society for Artificial Internal Organs : 1992)",NULL,NULL,NULL,NULL
+279,"Frontiers in cardiovascular medicine",NULL,NULL,NULL,NULL
+280,"Circulation. Heart failure",NULL,NULL,NULL,NULL
+281,"JACC. Asia",NULL,NULL,NULL,NULL
+282,Neurotoxicology,NULL,NULL,NULL,NULL
+283,"The Review of scientific instruments",NULL,NULL,NULL,NULL
+284,"Applied radiation and isotopes : including data, instrumentation and methods for use in agriculture, industry and medicine",NULL,NULL,NULL,NULL
+285,"Nano letters",NULL,NULL,NULL,NULL
+286,"Analytical and bioanalytical chemistry",NULL,NULL,NULL,NULL
+287,"Investigative radiology",NULL,NULL,NULL,NULL
+288,"Biosensors & bioelectronics",NULL,NULL,NULL,NULL
+289,"Journal of environmental sciences (China)",NULL,NULL,NULL,NULL
+290,"Environmental science & technology",NULL,NULL,NULL,NULL
+291,"Journal of exposure science & environmental epidemiology",NULL,NULL,NULL,NULL
+292,"Annals of cardiac anaesthesia",NULL,NULL,NULL,NULL
+293,"JHLT open",NULL,NULL,NULL,NULL
+294,"The Journal of infection",NULL,NULL,NULL,NULL
+295,"Veterinary sciences",NULL,NULL,NULL,NULL
+296,"Animals : an open access journal from MDPI",NULL,NULL,NULL,NULL
+297,"Diagnostic cytopathology",NULL,NULL,NULL,NULL
+298,Viruses,NULL,NULL,NULL,NULL
+299,"Emerging infectious diseases",NULL,NULL,NULL,NULL
+300,"Current research in parasitology & vector-borne diseases",NULL,NULL,NULL,NULL
+301,"JAMA dermatology",NULL,NULL,NULL,NULL
+302,"Veterinary microbiology",NULL,NULL,NULL,NULL
+303,"Veterinary world",NULL,NULL,NULL,NULL
+304,"Journal of equine veterinary science",NULL,NULL,NULL,NULL
+305,"Laryngoscope investigative otolaryngology",NULL,NULL,NULL,NULL
+306,"The Veterinary record",NULL,NULL,NULL,NULL
+307,"Microbiology resource announcements",NULL,NULL,NULL,NULL
+308,"Clinical and translational science",NULL,NULL,NULL,NULL
+309,"Journal of the American College of Surgeons",NULL,NULL,NULL,NULL
+310,"Trends in parasitology",NULL,NULL,NULL,NULL
+311,"BMC veterinary research",NULL,NULL,NULL,NULL
+312,"Transboundary and emerging diseases",NULL,NULL,NULL,NULL
+313,"BMC biology",NULL,NULL,NULL,NULL
+314,"Veterinary parasitology",NULL,NULL,NULL,NULL
+315,"PLoS biology",NULL,NULL,NULL,NULL
+316,"Journal of feline medicine and surgery",NULL,NULL,NULL,NULL
+317,"Infection, genetics and evolution : journal of molecular epidemiology and evolutionary genetics in infectious diseases",NULL,NULL,NULL,NULL
+318,"International journal for parasitology",NULL,NULL,NULL,NULL
+319,"PLoS neglected tropical diseases",NULL,NULL,NULL,NULL
+320,"Interactive cardiovascular and thoracic surgery",NULL,NULL,NULL,NULL
+321,"BMC genomics",NULL,NULL,NULL,NULL
+322,"Turkiye parazitolojii dergisi",NULL,NULL,NULL,NULL
+323,"Parasites & vectors",NULL,NULL,NULL,NULL
+324,"Journal of veterinary diagnostic investigation : official publication of the American Association of Veterinary Laboratory Diagnosticians, Inc",NULL,NULL,NULL,NULL
+325,"Cellular microbiology",NULL,NULL,NULL,NULL
+326,eLife,NULL,NULL,NULL,NULL
+327,"Arthritis & rheumatology (Hoboken, N.J.)",NULL,NULL,NULL,NULL
+328,"Ticks and tick-borne diseases",NULL,NULL,NULL,NULL
+329,Spine,NULL,NULL,NULL,NULL
+330,"Current opinion in cardiology",NULL,NULL,NULL,NULL
+331,"World neurosurgery",NULL,NULL,NULL,NULL
+332,Neurosurgery,NULL,NULL,NULL,NULL
+333,"Indian journal of thoracic and cardiovascular surgery",NULL,NULL,NULL,NULL
+334,"Critical care clinics",NULL,NULL,NULL,NULL
+335,"Clinical case reports",NULL,NULL,NULL,NULL
+336,"Therapeutic advances in infectious disease",NULL,NULL,NULL,NULL
+337,"International journal of cardiology",NULL,NULL,NULL,NULL
+338,"Texas Heart Institute journal",NULL,NULL,NULL,NULL
+339,"JACC. Case reports",NULL,NULL,NULL,NULL
+340,"Clinical cancer research : an official journal of the American Association for Cancer Research",NULL,NULL,NULL,NULL
+341,"Journal of clinical anesthesia",NULL,NULL,NULL,NULL
+342,"Nature reviews. Cardiology",NULL,NULL,NULL,NULL
+343,"Current heart failure reports",NULL,NULL,NULL,NULL
+344,"Global cardiology science & practice",NULL,NULL,NULL,NULL
+345,"Heart (British Cardiac Society)",NULL,NULL,NULL,NULL
+346,"Circulation journal : official journal of the Japanese Circulation Society",NULL,NULL,NULL,NULL
+347,"The Journal of physiology",NULL,NULL,NULL,NULL
+348,"Journal of thrombosis and thrombolysis",NULL,NULL,NULL,NULL
+349,"Journal of interventional cardiology",NULL,NULL,NULL,NULL
+350,"Journal of pain and symptom management",NULL,NULL,NULL,NULL
+351,"AMA journal of ethics",NULL,NULL,NULL,NULL
+352,"A&A practice",NULL,NULL,NULL,NULL
+353,"Annals of vascular surgery",NULL,NULL,NULL,NULL
+354,"Prehospital emergency care",NULL,NULL,NULL,NULL
+355,"JACC. Cardiovascular interventions",NULL,NULL,NULL,NULL
+356,"Journal of surgical oncology",NULL,NULL,NULL,NULL
+357,"Clinical lung cancer",NULL,NULL,NULL,NULL
+358,"Journal of thoracic imaging",NULL,NULL,NULL,NULL
+359,"Clinics in colon and rectal surgery",NULL,NULL,NULL,NULL
+360,"American heart journal",NULL,NULL,NULL,NULL
+361,"Frontiers in pediatrics",NULL,NULL,NULL,NULL
+362,"Current problems in surgery",NULL,NULL,NULL,NULL
+363,"The International journal of artificial organs",NULL,NULL,NULL,NULL
+364,Transplantation,NULL,NULL,NULL,NULL
+365,"IEEE journal of biomedical and health informatics",NULL,NULL,NULL,NULL
+366,"JAMA surgery",NULL,NULL,NULL,NULL
+367,"Medicina (Kaunas, Lithuania)",NULL,NULL,NULL,NULL
+368,"Health equity",NULL,NULL,NULL,NULL
+369,"Critical care medicine",NULL,NULL,NULL,NULL
+370,"Light, science & applications",NULL,NULL,NULL,NULL
+371,"Journal of cardiovascular development and disease",NULL,NULL,NULL,NULL
+372,"Clinical research in cardiology : official journal of the German Cardiac Society",NULL,NULL,NULL,NULL
+373,"Panminerva medica",NULL,NULL,NULL,NULL
+374,"JACC. CardioOncology",NULL,NULL,NULL,NULL
+375,"Archives of orthopaedic and trauma surgery",NULL,NULL,NULL,NULL
+376,"Australasian journal of ultrasound in medicine",NULL,NULL,NULL,NULL
+377,"Journal of neurology, neurosurgery, and psychiatry",NULL,NULL,NULL,NULL
+378,"Neuro-oncology practice",NULL,NULL,NULL,NULL
+379,Nature,NULL,NULL,NULL,NULL
+380,"American journal of ophthalmology",NULL,NULL,NULL,NULL
+381,"The Journal of clinical investigation",NULL,NULL,NULL,NULL
+382,iScience,NULL,NULL,NULL,NULL
+383,"Brain : a journal of neurology",NULL,NULL,NULL,NULL
+384,"British journal of hospital medicine (London, England : 2005)",NULL,NULL,NULL,NULL
+385,"Journal of analytical toxicology",NULL,NULL,NULL,NULL
+386,"European journal of heart failure",NULL,NULL,NULL,NULL
+387,"medRxiv : the preprint server for health sciences",NULL,NULL,NULL,NULL
+388,"Journal of clinical sleep medicine : JCSM : official publication of the American Academy of Sleep Medicine",NULL,NULL,NULL,NULL
+389,"Case reports in hepatology",NULL,NULL,NULL,NULL
+390,"Internal medicine journal",NULL,NULL,NULL,NULL
+391,"Journal of aerosol medicine and pulmonary drug delivery",NULL,NULL,NULL,NULL
+392,"American journal of clinical pathology",NULL,NULL,NULL,NULL
+393,"Lancet (London, England)",NULL,NULL,NULL,NULL
+394,"The Laryngoscope",NULL,NULL,NULL,NULL
+395,"Journal of neuro-oncology",NULL,NULL,NULL,NULL
+396,"Journal of pharmacy practice",NULL,NULL,NULL,NULL
+397,"Digestive diseases and sciences",NULL,NULL,NULL,NULL
+398,"PLoS pathogens",NULL,NULL,NULL,NULL
+399,"Nature plants",NULL,NULL,NULL,NULL
+400,"Practical neurology",NULL,NULL,NULL,NULL
+401,"Journal of pharmacological and toxicological methods",NULL,NULL,NULL,NULL
+402,"IEEE transactions on visualization and computer graphics",NULL,NULL,NULL,NULL
+403,"Conservation biology : the journal of the Society for Conservation Biology",NULL,NULL,NULL,NULL
+404,Insects,NULL,NULL,NULL,NULL
+405,Epilepsia,NULL,NULL,NULL,NULL
+406,"Nature ecology & evolution",NULL,NULL,NULL,NULL
+407,"Radiation oncology (London, England)",NULL,NULL,NULL,NULL
+408,"American journal of perinatology",NULL,NULL,NULL,NULL
+409,"NPJ biofilms and microbiomes",NULL,NULL,NULL,NULL
+410,"Cancer letters",NULL,NULL,NULL,NULL
+411,"The neuroradiology journal",NULL,NULL,NULL,NULL
+412,"JACC. Clinical electrophysiology",NULL,NULL,NULL,NULL
+413,"Infection and immunity",NULL,NULL,NULL,NULL
+414,"Cleveland Clinic journal of medicine",NULL,NULL,NULL,NULL
+415,"Aesthetic plastic surgery",NULL,NULL,NULL,NULL
+416,"International journal of hepatology",NULL,NULL,NULL,NULL
+417,"Oxford medical case reports",NULL,NULL,NULL,NULL
+418,"Annals of gastroenterology",NULL,NULL,NULL,NULL
+419,"JMIR rehabilitation and assistive technologies",NULL,NULL,NULL,NULL
+420,"Expert opinion on drug safety",NULL,NULL,NULL,NULL
+421,"Minerva gastroenterology",NULL,NULL,NULL,NULL
+422,"Disease-a-month : DM",NULL,NULL,NULL,NULL
+423,"European urology focus",NULL,NULL,NULL,NULL
+424,"bioRxiv : the preprint server for biology",NULL,NULL,NULL,NULL
+425,"Journal of geriatric cardiology : JGC",NULL,NULL,NULL,NULL
+426,"Folia phoniatrica et logopaedica : official organ of the International Association of Logopedics and Phoniatrics (IALP)",NULL,NULL,NULL,NULL
+427,"Urology practice",NULL,NULL,NULL,NULL
+428,"American journal of health-system pharmacy : AJHP : official journal of the American Society of Health-System Pharmacists",NULL,NULL,NULL,NULL
+429,"Molecular psychiatry",NULL,NULL,NULL,NULL
+430,"Journal of cardiology",NULL,NULL,NULL,NULL
+431,"Biopreservation and biobanking",NULL,NULL,NULL,NULL
+432,Vaccines,NULL,NULL,NULL,NULL
+433,"Operative neurosurgery (Hagerstown, Md.)",NULL,NULL,NULL,NULL
+434,"Diagnostic and interventional radiology (Ankara, Turkey)",NULL,NULL,NULL,NULL
+435,"Seminars in nuclear medicine",NULL,NULL,NULL,NULL
+436,"Global advances in integrative medicine and health",NULL,NULL,NULL,NULL
+437,Cell,NULL,NULL,NULL,NULL
+438,"American journal of orthodontics and dentofacial orthopedics : official publication of the American Association of Orthodontists, its constituent societies, and the American Board of Orthodontics",NULL,NULL,NULL,NULL
+439,"American journal of therapeutics",NULL,NULL,NULL,NULL
+440,"Journal of migration and health",NULL,NULL,NULL,NULL
+441,"Cardiology and cardiovascular medicine",NULL,NULL,NULL,NULL
+442,"The American journal of gastroenterology",NULL,NULL,NULL,NULL
+443,"Journal of orthopaedics and sports medicine",NULL,NULL,NULL,NULL
+444,"JMIR cardio",NULL,NULL,NULL,NULL
+445,"NIHR open research",NULL,NULL,NULL,NULL
+446,"Hematology reports",NULL,NULL,NULL,NULL
+447,"Health science reports",NULL,NULL,NULL,NULL
+448,"Journal of general internal medicine",NULL,NULL,NULL,NULL
+449,"Current problems in cardiology",NULL,NULL,NULL,NULL
+450,"JGH open : an open access journal of gastroenterology and hepatology",NULL,NULL,NULL,NULL
+451,"Journal of epidemiology and community health",NULL,NULL,NULL,NULL
+452,"The Journal of clinical endocrinology and metabolism",NULL,NULL,NULL,NULL
+453,"Journal of clinical gastroenterology",NULL,NULL,NULL,NULL
+454,Urology,NULL,NULL,NULL,NULL
+455,"International journal of epidemiology",NULL,NULL,NULL,NULL
+456,"Journal of medical education and curricular development",NULL,NULL,NULL,NULL
+457,"Eye (London, England)",NULL,NULL,NULL,NULL
+458,IDCases,NULL,NULL,NULL,NULL
+459,"Journal of occupational medicine and toxicology (London, England)",NULL,NULL,NULL,NULL
+460,"Current pharmaceutical design",NULL,NULL,NULL,NULL
+461,"Journal of the American Pharmacists Association : JAPhA",NULL,NULL,NULL,NULL
+462,"Einstein (Sao Paulo, Brazil)",NULL,NULL,NULL,NULL
+463,"JMIR public health and surveillance",NULL,NULL,NULL,NULL
+464,"Wellcome open research",NULL,NULL,NULL,NULL
+465,"Molecular and cellular biochemistry",NULL,NULL,NULL,NULL
+466,"African journal of laboratory medicine",NULL,NULL,NULL,NULL
+467,"Chemical science",NULL,NULL,NULL,NULL
+468,"The Canadian journal of cardiology",NULL,NULL,NULL,NULL
+469,"Journal of racial and ethnic health disparities",NULL,NULL,NULL,NULL
+470,"Frontiers in neurology",NULL,NULL,NULL,NULL
+471,"BMC medical education",NULL,NULL,NULL,NULL
+472,"World journal of clinical cases",NULL,NULL,NULL,NULL
+473,"Epidemiology and infection",NULL,NULL,NULL,NULL
+474,"Journal of intelligent information systems",NULL,NULL,NULL,NULL
+475,"Plant physiology",NULL,NULL,NULL,NULL
+476,"Asia-Pacific journal of ophthalmology (Philadelphia, Pa.)",NULL,NULL,NULL,NULL
+477,Vaccine,NULL,NULL,NULL,NULL
+478,"Journal of clinical imaging science",NULL,NULL,NULL,NULL
+479,"Endoscopy international open",NULL,NULL,NULL,NULL
+480,"Public health challenges..",NULL,NULL,NULL,NULL
+481,"Health psychology research..",NULL,NULL,NULL,NULL
+482,"Pharmaceutical development and technology",NULL,NULL,NULL,NULL
+483,"RSC advances",NULL,NULL,NULL,NULL
+484,"Occupational and environmental medicine",NULL,NULL,NULL,NULL
+485,"Journal of computer assisted tomography",NULL,NULL,NULL,NULL
+486,Stroke,NULL,NULL,NULL,NULL
+487,"Aging medicine (Milton (N.S.W))",NULL,NULL,NULL,NULL
+488,"Journal of stroke and cerebrovascular diseases : the official journal of National Stroke Association",NULL,NULL,NULL,NULL
+489,"Journal of occupational and environmental medicine",NULL,NULL,NULL,NULL
+490,"JAMA network open",NULL,NULL,NULL,NULL
+491,"Journal of drugs in dermatology : JDD",NULL,NULL,NULL,NULL
+492,Cutis,NULL,NULL,NULL,NULL
+493,"Canadian Association of Radiologists journal = Journal l'Association canadienne des radiologistes",NULL,NULL,NULL,NULL
+494,"Fungal biology reviews",NULL,NULL,NULL,NULL
+495,"Information systems frontiers : a journal of research and innovation",NULL,NULL,NULL,NULL
+496,"Journal of pharmacy & bioallied sciences",NULL,NULL,NULL,NULL
+497,"The Journal of foot and ankle surgery : official publication of the American College of Foot and Ankle Surgeons",NULL,NULL,NULL,NULL
+498,"Journal of the Royal Society of Medicine",NULL,NULL,NULL,NULL
+499,"Internal and emergency medicine",NULL,NULL,NULL,NULL
+500,"Journal of health care for the poor and underserved",NULL,NULL,NULL,NULL
+501,"International ophthalmology",NULL,NULL,NULL,NULL
+502,"Journal of the American College of Radiology : JACR",NULL,NULL,NULL,NULL
+503,"The American journal of medicine",NULL,NULL,NULL,NULL
+504,"The Pan African medical journal",NULL,NULL,NULL,NULL
+505,"Journal of cardiovascular pharmacology and therapeutics",NULL,NULL,NULL,NULL
+506,"Dermatologic surgery : official publication for American Society for Dermatologic Surgery [et al.]",NULL,NULL,NULL,NULL
+507,"Journal of intensive care medicine",NULL,NULL,NULL,NULL
+508,"International journal of dermatology",NULL,NULL,NULL,NULL
+509,"Academic radiology",NULL,NULL,NULL,NULL
+510,"Archives of dermatological research..",NULL,NULL,NULL,NULL
+511,"Journal of the American Academy of Dermatology",NULL,NULL,NULL,NULL
+512,"American journal of physiology. Cell physiology",NULL,NULL,NULL,NULL
+513,"Neurology and therapy",NULL,NULL,NULL,NULL
+514,"Methods in molecular biology (Clifton, N.J.)",NULL,NULL,NULL,NULL
+515,"Clinical gastroenterology and hepatology : the official clinical practice journal of the American Gastroenterological Association",NULL,NULL,NULL,NULL
+516,"International journal of MCH and AIDS",NULL,NULL,NULL,NULL
+517,"Current drug delivery",NULL,NULL,NULL,NULL
+518,"Ophthalmic plastic and reconstructive surgery",NULL,NULL,NULL,NULL
+519,"Pain management",NULL,NULL,NULL,NULL
+520,"Missouri medicine",NULL,NULL,NULL,NULL
+521,"Current urology reports",NULL,NULL,NULL,NULL
+522,"Inorganic chemistry",NULL,NULL,NULL,NULL
+523,"JAMA cardiology",NULL,NULL,NULL,NULL
+524,"Health promotion and chronic disease prevention in Canada : research, policy and practice",NULL,NULL,NULL,NULL
+525,Bone,NULL,NULL,NULL,NULL
+526,"Critical care (London, England)",NULL,NULL,NULL,NULL
+527,"Chemistry (Weinheim an der Bergstrasse, Germany)",NULL,NULL,NULL,NULL
+528,"The New phytologist",NULL,NULL,NULL,NULL
+529,"Genome research",NULL,NULL,NULL,NULL
+530,"Dalton transactions (Cambridge, England : 2003)",NULL,NULL,NULL,NULL
+531,"Medical journal, Armed Forces India",NULL,NULL,NULL,NULL
+532,"Anticancer research",NULL,NULL,NULL,NULL
+533,"Journal of critical care",NULL,NULL,NULL,NULL
+534,"Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",NULL,NULL,NULL,NULL
+535,"The American Journal of dermatopathology",NULL,NULL,NULL,NULL
+536,"Vascular medicine (London, England)",NULL,NULL,NULL,NULL
+537,"The International journal of angiology : official publication of the International College of Angiology, Inc",NULL,NULL,NULL,NULL
+538,"Clinical and applied thrombosis/hemostasis : official journal of the International Academy of Clinical and Applied Thrombosis/Hemostasis",NULL,NULL,NULL,NULL
+539,Biomaterials,NULL,NULL,NULL,NULL
+540,"Communications medicine",NULL,NULL,NULL,NULL
+541,"NPJ Regenerative medicine",NULL,NULL,NULL,NULL
+542,Atherosclerosis,NULL,NULL,NULL,NULL
+543,"Circulation. Cardiovascular interventions",NULL,NULL,NULL,NULL
+544,"Bioengineering & translational medicine",NULL,NULL,NULL,NULL
+545,"Arteriosclerosis, thrombosis, and vascular biology",NULL,NULL,NULL,NULL
+546,"Journal of bioscience and bioengineering",NULL,NULL,NULL,NULL
+547,"The journal of vascular access",NULL,NULL,NULL,NULL
+548,"Vessel plus",NULL,NULL,NULL,NULL
+549,"Annals of biomedical engineering",NULL,NULL,NULL,NULL
+550,"Cardiovascular engineering and technology",NULL,NULL,NULL,NULL
+551,"World journal of surgery",NULL,NULL,NULL,NULL
+552,"Surgical innovation",NULL,NULL,NULL,NULL
+553,"Transplant international : official journal of the European Society for Organ Transplantation",NULL,NULL,NULL,NULL
+554,"Frontiers in bioengineering and biotechnology",NULL,NULL,NULL,NULL
+555,"Journal of the mechanical behavior of biomedical materials",NULL,NULL,NULL,NULL
+556,"Journal of surgical education",NULL,NULL,NULL,NULL
+557,"Bio-design and manufacturing",NULL,NULL,NULL,NULL
+558,Surgery,NULL,NULL,NULL,NULL
+559,"Journal of the Royal Society, Interface",NULL,NULL,NULL,NULL
+560,"Tissue engineering. Part A",NULL,NULL,NULL,NULL
+561,Genes,NULL,NULL,NULL,NULL
+562,"Microbial biotechnology",NULL,NULL,NULL,NULL
+563,"Medical engineering & physics",NULL,NULL,NULL,NULL
+564,Cytokine,NULL,NULL,NULL,NULL
+565,"Nature biomedical engineering",NULL,NULL,NULL,NULL
+566,"Advanced healthcare materials",NULL,NULL,NULL,NULL
+567,"Cardiovascular diabetology",NULL,NULL,NULL,NULL
+568,"Case reports in transplantation",NULL,NULL,NULL,NULL
+569,"Evidence-based complementary and alternative medicine : eCAM",NULL,NULL,NULL,NULL
+570,"Journal of medical imaging (Bellingham, Wash.)",NULL,NULL,NULL,NULL
+571,"Advanced nanobiomed research",NULL,NULL,NULL,NULL
+572,"Transplantation proceedings",NULL,NULL,NULL,NULL
+573,"Clinics (Sao Paulo, Brazil)",NULL,NULL,NULL,NULL
+574,"Cardiology and therapy",NULL,NULL,NULL,NULL
+575,"Journal of immigrant and minority health",NULL,NULL,NULL,NULL
+576,"Journal of medical virology",NULL,NULL,NULL,NULL
+577,"European radiology",NULL,NULL,NULL,NULL
+578,"Journal of transplantation",NULL,NULL,NULL,NULL
+579,"Research square",NULL,NULL,NULL,NULL
+580,"Journal of pediatric urology",NULL,NULL,NULL,NULL
+581,"Translational andrology and urology",NULL,NULL,NULL,NULL
+582,"Canadian Urological Association journal = Journal de l'Association des urologues du Canada",NULL,NULL,NULL,NULL
+583,"Modern pathology : an official journal of the United States and Canadian Academy of Pathology, Inc",NULL,NULL,NULL,NULL
+584,"Rapid communications in mass spectrometry : RCM",NULL,NULL,NULL,NULL
+585,"Biomedical chromatography : BMC",NULL,NULL,NULL,NULL
+586,"Frontiers in psychiatry",NULL,NULL,NULL,NULL
+587,"Analytical biochemistry",NULL,NULL,NULL,NULL
+588,"Medical physics",NULL,NULL,NULL,NULL
+589,"Journal of applied biomaterials & functional materials",NULL,NULL,NULL,NULL
+590,"Case reports in cardiology",NULL,NULL,NULL,NULL
+591,"Critical care nurse",NULL,NULL,NULL,NULL
+592,"Anesthesia and analgesia",NULL,NULL,NULL,NULL
+593,"Neurobiology of disease",NULL,NULL,NULL,NULL
+594,"Internal medicine (Tokyo, Japan)",NULL,NULL,NULL,NULL
+595,"NPJ digital medicine",NULL,NULL,NULL,NULL
+596,"Clinical therapeutics",NULL,NULL,NULL,NULL
+597,"Clinical & experimental neuroimmunology",NULL,NULL,NULL,NULL
+598,"JAMA internal medicine",NULL,NULL,NULL,NULL
+599,"Circulation. Cardiovascular quality and outcomes",NULL,NULL,NULL,NULL
+600,"Neurological sciences : official journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology",NULL,NULL,NULL,NULL
+601,"Substance abuse",NULL,NULL,NULL,NULL
+602,"Methodist DeBakey cardiovascular journal",NULL,NULL,NULL,NULL
+603,JAMA,NULL,NULL,NULL,NULL
+604,"Journal of addiction medicine",NULL,NULL,NULL,NULL
+605,"The Journal of veterinary medical science",NULL,NULL,NULL,NULL
+606,"JACC. Cardiovascular imaging",NULL,NULL,NULL,NULL
+607,"Mayo Clinic proceedings",NULL,NULL,NULL,NULL
+608,"Haemophilia : the official journal of the World Federation of Hemophilia",NULL,NULL,NULL,NULL
+609,"ACS medicinal chemistry letters",NULL,NULL,NULL,NULL
+610,"The Thoracic and cardiovascular surgeon",NULL,NULL,NULL,NULL
+611,"Bioorganic & medicinal chemistry",NULL,NULL,NULL,NULL
+612,"Pediatric cardiology",NULL,NULL,NULL,NULL
+613,"Congenital heart disease",NULL,NULL,NULL,NULL
+614,"The heart surgery forum",NULL,NULL,NULL,NULL
+615,"Cardiology in the young",NULL,NULL,NULL,NULL
+616,"Journal of anaesthesiology, clinical pharmacology",NULL,NULL,NULL,NULL
+617,"World journal of urology",NULL,NULL,NULL,NULL
+618,"Indian journal of urology : IJU : journal of the Urological Society of India",NULL,NULL,NULL,NULL
+619,"Turk patoloji dergisi",NULL,NULL,NULL,NULL
+620,"International braz j urol : official journal of the Brazilian Society of Urology",NULL,NULL,NULL,NULL
+621,"Current opinion in anaesthesiology",NULL,NULL,NULL,NULL
+622,Angiology,NULL,NULL,NULL,NULL

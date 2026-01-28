@@ -1,0 +1,163 @@
+================================================================================
+PUBLICATION RATE ANALYSIS (Publications per Year Post-Residency)
+Controlling for Time Since Graduation
+Analysis Date: 2026-01-19 19:02:27
+================================================================================
+
+OVERALL STATISTICS
+----------------------------------------
+Total residents: 86
+Academic: 55
+Private: 31
+
+
+================================================================================
+TIME SINCE GRADUATION COMPARISON
+================================================================================
+
+Years Post-Graduation - Academic:
+  Mean ± SD: 2.54 ± 0.98
+  Median (IQR): 2.3 (1.8 - 3.3)
+  Range: 1.3169062286105406 - 4.317590691307323
+
+Years Post-Graduation - Private:
+  Mean ± SD: 2.19 ± 1.26
+  Median (IQR): 1.3 (1.3 - 3.3)
+  Range: 0.3175906913073237 - 4.317590691307323
+
+Independent t-test for years post-graduation:
+  t = 1.427, p = 0.1574
+  No significant difference in years post-graduation
+
+
+================================================================================
+RAW PUBLICATION COUNTS (Not Controlled for Time)
+================================================================================
+
+Academic:
+  Mean ± SD: 4.3 ± 8.0
+  Median (IQR): 1 (0 - 5)
+  Range: 0 - 43
+  % with >=1 publication: 60.0%
+
+Private:
+  Mean ± SD: 0.9 ± 2.7
+  Median (IQR): 0 (0 - 1)
+  Range: 0 - 15
+  % with >=1 publication: 29.0%
+
+
+================================================================================
+PUBLICATION RATES (Publications per Year) - TIME CONTROLLED
+================================================================================
+
+Academic:
+  Mean ± SD: 1.549 ± 2.570 pubs/year
+  Median (IQR): 0.431 (0.000 - 1.808)
+  Range: 0.000 - 11.390
+  % with publication rate > 0: 60.0%
+
+Private:
+  Mean ± SD: 0.346 ± 0.920 pubs/year
+  Median (IQR): 0.000 (0.000 - 0.232)
+  Range: 0.000 - 4.520
+  % with publication rate > 0: 29.0%
+
+
+================================================================================
+IMPACT FACTOR (5-YEAR) BY CAREER TYPE
+================================================================================
+
+Residents with IF data: 68 of 86
+Academic (n=46):
+  Mean ± SD: 3.66 ± 1.73
+  Median (IQR): 3.30 (2.37 - 4.29)
+  Range: 1.00 - 8.88
+
+Private (n=22):
+  Mean ± SD: 4.14 ± 3.04
+  Median (IQR): 3.79 (3.00 - 4.42)
+  Range: 1.00 - 16.30
+
+Welch's t-test (IF): t = -0.695, p = 0.4929
+Mann-Whitney U (IF): U = 457.5, p = 0.5286
+Effect Size (Cohen's d) IF: -0.196
+
+
+================================================================================
+STATISTICAL TESTS ON PUBLICATION RATES
+================================================================================
+
+Welch's t-test (unequal variances):
+  t = 3.132, p = 0.0025
+  **SIGNIFICANT DIFFERENCE in publication rates**
+
+Mann-Whitney U test (non-parametric):
+  U = 1174.5, p = 0.0019
+  **SIGNIFICANT DIFFERENCE in publication rates**
+
+Effect Size (Cohen's d): 0.623
+  (Medium to large effect)
+
+
+================================================================================
+LINEAR REGRESSION: Rate ~ Career Type + Years Post-Graduation
+================================================================================
+
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     publications_per_year   R-squared:                       0.084
+Model:                               OLS   Adj. R-squared:                  0.062
+Method:                    Least Squares   F-statistic:                     3.830
+Date:                   Mon, 19 Jan 2026   Prob (F-statistic):             0.0256
+Time:                           19:02:27   Log-Likelihood:                -185.47
+No. Observations:                     86   AIC:                             376.9
+Df Residuals:                         83   BIC:                             384.3
+Df Model:                              2                                         
+Covariance Type:               nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                    -0.1943      0.605     -0.321      0.749      -1.397       1.008
+career_binary             1.1168      0.484      2.308      0.023       0.154       2.079
+years_post_graduation     0.2470      0.214      1.154      0.252      -0.179       0.673
+==============================================================================
+Omnibus:                       66.904   Durbin-Watson:                   1.949
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              307.884
+Skew:                           2.603   Prob(JB):                     1.39e-67
+Kurtosis:                      10.669   Cond. No.                         8.35
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Interpretation:
+  Controlling for years post-graduation, academics publish at a rate
+  that is 1.117 publications/year higher
+  than private practitioners (p = 0.0235)
+
+
+================================================================================
+PUBLICATION RATES BY TIME COHORTS
+================================================================================
+
+
+1-3 years post-graduation (n=56):
+----------------------------------------
+  Academic (n=36):
+    Mean rate: 1.306 pubs/year
+    Median rate: 0.431 pubs/year
+  Private (n=20):
+    Mean rate: 0.249 pubs/year
+    Median rate: 0.000 pubs/year
+  t-test: t=2.502, p=0.0163
+
+4-6 years post-graduation (n=30):
+----------------------------------------
+  Academic (n=19):
+    Mean rate: 2.008 pubs/year
+    Median rate: 0.463 pubs/year
+  Private (n=11):
+    Mean rate: 0.523 pubs/year
+    Median rate: 0.000 pubs/year
+  t-test: t=1.922, p=0.0652

@@ -1,0 +1,179 @@
+Analysis Report for During Residency Generated on 2025-10-30 11:52:54
+Shape of data: (86, 13)
+
+
+Predicted Probability of Academic Career by Publication Count Bin:
+0 publications: 0.50
+1–4 publications: 0.53–0.62 (midpoint: 0.57)
+5–9 publications: 0.64–0.74 (midpoint: 0.70)
+10–14 publications: 0.76–0.84 (midpoint: 0.80)
+15+ publications: 0.85–0.97 (midpoint: 0.93)
+Logistic Regression Model Summary:
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:          career_binary   No. Observations:                   86
+Model:                          Logit   Df Residuals:                       84
+Method:                           MLE   Df Model:                            1
+Date:                Thu, 30 Oct 2025   Pseudo R-squ.:                  0.1001
+Time:                        11:52:54   Log-Likelihood:                -50.588
+converged:                       True   LL-Null:                       -56.217
+Covariance Type:            nonrobust   LLR p-value:                 0.0007929
+======================================================================================
+                         coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+const                  0.0116      0.291      0.040      0.968      -0.559       0.582
+total_publications     0.1161      0.052      2.252      0.024       0.015       0.217
+======================================================================================
+
+Publication Statistics by Career Type:
+                            count       mean        std  min  median  max
+post_residency_career_type                                               
+Academic                       55  12.836364  25.822588    0     4.0  153
+Private                        31   2.645161   3.781961    0     1.0   15
+
+T-test for difference in means (Academic vs Private):
+t-statistic: 2.873, p-value: 0.0028
+
+Mann-Whitney U test (Academic > Private):
+Statistic: 1146.500, p-value: 0.0038
+
+Welch's t-test (Academic > Private):
+t-statistic: 2.873, p-value: 0.0028
+
+Effect Size (Cohen's d) for Academic vs Private: 0.552
+
+Odds Ratio: 1.123
+95% CI: (1.015, 1.243)
+Interpretation: For each additional total publications, the odds increase by 12.3%
+
+ROC AUC Score: 0.672
+
+Median and IQR by Career Type:
+Academic: median = 4.00, IQR = [1.00, 14.00]
+Private: median = 1.00, IQR = [0.00, 4.00]
+
+Proportion with >=1 publication by Career Type:
+Academic: 43/55 (78.2%) have >= 1 publications
+Private: 20/31 (64.5%) have >= 1 publications
+
+Zero-Inflated Poisson Regression Summary:
+                     ZeroInflatedPoisson Regression Results                    
+===============================================================================
+Dep. Variable:      total_publications   No. Observations:                   86
+Model:             ZeroInflatedPoisson   Df Residuals:                       84
+Method:                            MLE   Df Model:                            1
+Date:                 Thu, 30 Oct 2025   Pseudo R-squ.:                  0.1154
+Time:                         11:52:54   Log-Likelihood:                -775.13
+converged:                        True   LL-Null:                       -876.26
+Covariance Type:             nonrobust   LLR p-value:                 6.710e-46
+=================================================================================
+                    coef    std err          z      P>|z|      [0.025      0.975]
+---------------------------------------------------------------------------------
+inflate_const    -1.0403      0.249     -4.171      0.000      -1.529      -0.551
+const             1.3840      0.116     11.883      0.000       1.156       1.612
+career_binary     1.4144      0.122     11.556      0.000       1.175       1.654
+=================================================================================
+
+--- Sex Comparison: Research Output (All Career Types) ---
+N Female: 25, N Male: 61
+Female Mean (SD): 7.32 (13.52), Median (IQR): 1.00 (6.00)
+Male Mean (SD): 9.92 (23.80), Median (IQR): 3.00 (7.00)
+T-test for difference in means (Female vs Male):
+t-statistic: -0.638, p-value: 0.7372
+
+Mann-Whitney U test (Female > Male):
+Statistic: 652.000, p-value: 0.8574
+
+Welch's t-test (Female > Male):
+t-statistic: -0.638, p-value: 0.7372
+
+Effect Size (Cohen's d) for Female vs Male: -0.134
+
+
+--- Subgroup Analysis: Sex ---
+
+Sex: F
+Publication Statistics by Career Type:
+                            count       mean        std  min  median  max
+post_residency_career_type                                               
+Academic                       17  10.352941  15.592230    0     5.0   50
+Private                         8   0.875000   1.125992    0     0.5    3
+Academic placement: 68.0%
+Private placement: 32.0%
+
+T-test for difference in means (Academic vs Private):
+t-statistic: 2.493, p-value: 0.0119
+
+Mann-Whitney U test (Academic > Private):
+Statistic: 98.500, p-value: 0.0363
+
+Welch's t-test (Academic > Private):
+t-statistic: 2.493, p-value: 0.0119
+
+Effect Size (Cohen's d) for Academic vs Private: 0.857
+
+
+Sex: M
+Publication Statistics by Career Type:
+                            count       mean        std  min  median  max
+post_residency_career_type                                               
+Academic                       38  13.947368  29.392909    0     4.0  153
+Private                        23   3.260870   4.191088    0     1.0   15
+Academic placement: 62.3%
+Private placement: 37.7%
+
+T-test for difference in means (Academic vs Private):
+t-statistic: 2.205, p-value: 0.0167
+
+Mann-Whitney U test (Academic > Private):
+Statistic: 571.000, p-value: 0.0225
+
+Welch's t-test (Academic > Private):
+t-statistic: 2.205, p-value: 0.0167
+
+Effect Size (Cohen's d) for Academic vs Private: 0.509
+
+
+--- Subgroup Analysis: Fellowship ---
+
+Fellowship: 0
+Publication Statistics by Career Type:
+                            count       mean        std  min  median  max
+post_residency_career_type                                               
+Academic                       42  13.976190  28.276068    0     5.5  153
+Private                        29   2.827586   3.845860    0     1.0   15
+Academic placement: 59.2%
+Private placement: 40.8%
+
+T-test for difference in means (Academic vs Private):
+t-statistic: 2.522, p-value: 0.0077
+
+Mann-Whitney U test (Academic > Private):
+Statistic: 848.500, p-value: 0.0024
+
+Welch's t-test (Academic > Private):
+t-statistic: 2.522, p-value: 0.0077
+
+Effect Size (Cohen's d) for Academic vs Private: 0.553
+
+
+Fellowship: 1
+Publication Statistics by Career Type:
+                            count      mean        std  min  median  max
+post_residency_career_type                                              
+Academic                       13  9.153846  15.800032    0     1.0   50
+Private                         2  0.000000   0.000000    0     0.0    0
+Academic placement: 86.7%
+Private placement: 13.3%
+
+T-test for difference in means (Academic vs Private):
+t-statistic: 2.089, p-value: 0.0293
+
+Mann-Whitney U test (Academic > Private):
+Statistic: 22.000, p-value: 0.0661
+
+Welch's t-test (Academic > Private):
+t-statistic: 2.089, p-value: 0.0293
+
+Effect Size (Cohen's d) for Academic vs Private: 0.819
+
