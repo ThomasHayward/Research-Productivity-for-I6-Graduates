@@ -18,6 +18,16 @@ def process_row(conn, row):
     fellowship = row['Fellowship'].strip() if pd.notna(row['Fellowship']) else None
     post_residency_career = row['Post_Residency_Career'].strip() if pd.notna(row['Post_Residency_Career']) else None
     career_res = row['Career']
+    
+    # Handle med school ranking - convert "Unranked" to None, otherwise convert to int
+    med_school_ranking = None
+    if pd.notna(row['Med_school_ranking']):
+        ranking_value = str(row['Med_school_ranking']).strip()
+        if ranking_value.lower() != 'unranked':
+            try:
+                med_school_ranking = int(ranking_value)
+            except ValueError:
+                med_school_ranking = None
 
     cursor = conn.cursor()
     try:
@@ -26,8 +36,10 @@ def process_row(conn, row):
                                {RESIDENCY["NAME"]: residency})
 
         if medical_school:
-            insert_if_not_exists(cursor, TABLES["MEDICAL_SCHOOL"], 
-                               {MEDICAL_SCHOOL["NAME"]: medical_school})
+            medical_school_data = {MEDICAL_SCHOOL["NAME"]: medical_school}
+            if med_school_ranking is not None:
+                medical_school_data[MEDICAL_SCHOOL["RANK"]] = med_school_ranking
+            insert_if_not_exists(cursor, TABLES["MEDICAL_SCHOOL"], medical_school_data)
 
         fellowship_id = None
         if fellowship:
@@ -62,6 +74,17 @@ def process_row(conn, row):
         med_school_research = 0
         residency_research = duration - 6
         sex = row['Sex']
+        
+        # Process new columns
+        credentials = row['Credentials'].strip() if pd.notna(row['Credentials']) else None
+        
+        # Handle h-index - convert to int if valid, otherwise None
+        h_index = None
+        if pd.notna(row['h-index']):
+            try:
+                h_index = int(row['h-index'])
+            except ValueError:
+                h_index = None
 
         residency_result = select_with_condition(cursor, TABLES["RESIDENCY"], conditions={RESIDENCY["NAME"]: residency})
         residency_id = residency_result[0][0] if residency_result else None
@@ -76,6 +99,8 @@ def process_row(conn, row):
             RESIDENT["MATCH_YEAR"]: match_year,
             RESIDENT["GRAD_YEAR"]: grad_year,   
             RESIDENT["SEX"]: sex,
+            RESIDENT["CREDENTIALS"]: credentials,
+            RESIDENT["H_INDEX"]: h_index,
             RESIDENT["DURATION"]: duration,
             RESIDENT["MEDICAL_SCHOOL_RESEARCH_YEARS"]: med_school_research,
             RESIDENT["RESIDENCY_RESEARCH_YEARS"]: residency_research,

@@ -22,6 +22,8 @@ RESIDENT = {
     "GRAD_YEAR": "grad_year",
     "DURATION": "duration",
     "SEX": "sex",
+    "CREDENTIALS": "credentials",
+    "H_INDEX": "h_index",
     "MEDICAL_SCHOOL_RESEARCH_YEARS": "medical_school_research_years",
     "RESIDENCY_RESEARCH_YEARS": "residency_research_years",
     "MEDICAL_SCHOOL_ID": "medical_school_id",
@@ -33,7 +35,6 @@ RESIDENT = {
 AUTHOR = {
     "ID": "id",
     "RESIDENT_ID": "resident_id",
-    "H_INDEX": "h_index",
     "AOA_STATUS": "aoa_status",
     "RANK": "rank",
     "PROGRAM_DIRECTOR": "program_director",
