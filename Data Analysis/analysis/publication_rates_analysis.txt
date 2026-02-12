@@ -1,7 +1,7 @@
 ================================================================================
 PUBLICATION RATE ANALYSIS (Publications per Year Post-Residency)
 Controlling for Time Since Graduation
-Analysis Date: 2026-01-19 19:02:27
+Analysis Date: 2026-02-12 18:04:09
 ================================================================================
 
 OVERALL STATISTICS
@@ -68,20 +68,60 @@ Private:
 IMPACT FACTOR (5-YEAR) BY CAREER TYPE
 ================================================================================
 
-Residents with IF data: 68 of 86
-Academic (n=46):
-  Mean ± SD: 3.66 ± 1.73
-  Median (IQR): 3.30 (2.37 - 4.29)
-  Range: 1.00 - 8.88
+Residents with IF data: 67 of 86
+Academic (n=47):
+  Mean ± SD: 3.58 ± 1.53
+  Median (IQR): 3.13 (2.40 - 4.14)
+  Range: 1.30 - 7.80
 
-Private (n=22):
-  Mean ± SD: 4.14 ± 3.04
-  Median (IQR): 3.79 (3.00 - 4.42)
-  Range: 1.00 - 16.30
+Private (n=20):
+  Mean ± SD: 4.08 ± 2.72
+  Median (IQR): 3.50 (3.15 - 3.86)
+  Range: 1.80 - 15.08
 
-Welch's t-test (IF): t = -0.695, p = 0.4929
-Mann-Whitney U (IF): U = 457.5, p = 0.5286
-Effect Size (Cohen's d) IF: -0.196
+Welch's t-test (IF): t = -0.772, p = 0.4477
+Mann-Whitney U (IF): U = 399.0, p = 0.3339
+Effect Size (Cohen's d) IF: -0.226
+
+
+================================================================================
+JOURNAL-LEVEL IMPACT FACTOR ANALYSIS
+================================================================================
+
+Total publications across all residents: 1097
+Publications with valid numeric IF: 1038 (94.6%)
+Publications without valid IF (N/A, N/F, or missing): 59 (5.4%)
+
+Individual Journal Statistics:
+  Total unique journals published in: 358
+  Journals with N/A or missing IF: 5 (1.4%)
+  Journals with N/F (not found) IF: 16 (4.5%)
+  Journals with valid numeric IF: 337 (94.1%)
+
+  Average IF across all journals: 5.41
+  Median IF: 3.60
+  Range: 0.30 - 64.70
+
+Distribution of Journals by Impact Factor:
+----------------------------------------
+  IF <1: 15 journals (4.5%)
+  IF 1-2: 40 journals (11.9%)
+  IF 2-3: 78 journals (23.1%)
+  IF 3-7: 144 journals (42.7%)
+  IF 7-10: 22 journals (6.5%)
+  IF 10+: 38 journals (11.3%)
+
+Weighted average IF across all resident publications: 4.96
+  (weighted by number of publications per resident)
+
+Distribution of Resident Average Impact Factors:
+----------------------------------------
+  IF <1: 0 residents (0.0%)
+  IF 1-2: 4 residents (6.0%)
+  IF 2-3: 20 residents (29.9%)
+  IF 3-7: 41 residents (61.2%)
+  IF 7-10: 1 residents (1.5%)
+  IF 10+: 1 residents (1.5%)
 
 
 ================================================================================
@@ -109,8 +149,8 @@ LINEAR REGRESSION: Rate ~ Career Type + Years Post-Graduation
 Dep. Variable:     publications_per_year   R-squared:                       0.084
 Model:                               OLS   Adj. R-squared:                  0.062
 Method:                    Least Squares   F-statistic:                     3.830
-Date:                   Mon, 19 Jan 2026   Prob (F-statistic):             0.0256
-Time:                           19:02:27   Log-Likelihood:                -185.47
+Date:                   Thu, 12 Feb 2026   Prob (F-statistic):             0.0256
+Time:                           18:04:09   Log-Likelihood:                -185.47
 No. Observations:                     86   AIC:                             376.9
 Df Residuals:                         83   BIC:                             384.3
 Df Model:                              2                                         

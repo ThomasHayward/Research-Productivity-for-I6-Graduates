@@ -1,43 +1,71 @@
 Journals to come back to
 
-- Aging 
-- AMA Journal of Ethics
+- Aging - 2023
+- AMA Journal of Ethics -> unfound
 - Anesthesiology Clinics - was 9.1 now 0.7
 - Antibiotics - Journal of Antibiotics (?) - was 4.9 now 2.7
 - Aorta - not found
-* Australasian journal of ultrasound in medicine
-* Australasian philosophical review
-* Blood vessels, thrombosis & hemostasis
-* Case reports in anesthesiology
-* Case reports in emergency medicine
-* Case reports in hepatology
-* Case reports in transplantation
-* Chemistry -> ChemistryOpen
-* Children 
-* Circulation, Cardiovascular interventions
-* Dementia is old as hell
-* Echocardiography
-* Einstein - Einstein-Sao Paulo? - 2.8 -> 1.0
-* Evidence-based Complementary and Alternative Medicine -> last year was 2021 -> 15.3 -> 3.014
-* Future healthcare journal
-* Global cardiology science & practice
-* HCA Healthcare journal of medicine
-* Industrial psychiatry journal
-* Innovations
-* International journal of heart failure
-* International journal of MCH and AIDS
-* JAAD Case reports
-* JACC advances
-* JACC asia
-* JACC case reports
-* JAMA
-* JHLT open
-* Journal of biomechanical engineering ->  journal of biomechanical engineering-transactions of the asme
-* Journal of Indian Association of Pediatric surgeons
-* Journal of orthopaedic case reports
-* Journal of orthopaedics and sports medicine
-* 
+- Australasian journal of ultrasound in medicine -> didnt find by id so oh well
+- Australasian philosophical review -> didnt find by id so oh well
+- Blood vessels, thrombosis & hemostasis -> didnt find by id so oh well
+- Case reports in anesthesiology -> unfound
+- Case reports in emergency medicine -> unfound
+- Case reports in hepatology -> unfound
+- Case reports in transplantation -> unfound
+- Chemistry -> unfound
+- Children -> unfound
+- Circulation. Cardiovascular interventions -> unfound
+- Dementia is old as hell
+- Echocardiography
+- Einstein - Einstein-Sao Paulo? - 2.8 -> 1.0
+- Evidence-based Complementary and Alternative Medicine -> last year was 2021 -> 15.3 -> 3.014
+- Future healthcare journal
+- Global cardiology science & practice
+- HCA Healthcare journal of medicine
+- Industrial psychiatry journal
+- Innovations
+- International journal of heart failure
+- International journal of MCH and AIDS
+- JAAD Case reports
+- JACC advances
+- JACC asia
+- JACC case reports
+- JAMA
+- JHLT open
+- Journal of biomechanical engineering ->  journal of biomechanical engineering-transactions of the asme
+- Journal of Indian Association of Pediatric surgeons
+- Journal of orthopaedic case reports
+- Journal of orthopaedics and sports medicine
+- Mathematical biosciences and engineering -> Nothing published since 2022 so the 5 year is a bit old
+- Medical journal, Armed Forces India
+- Medicina -> Need more on the journal
+- Medicines -> Need more on the journal
+- medRxiv : the preprint server for health sciences
+- Methodist DeBakey cardiovascular journal
+- Methods in molecular biology -> Maybe its Methods in molecular and cellular biology
+- Missouri medicine
+- Multimedia manual of cardiothoracic surgery
+- NIHR open research
+- Obesity pillars
+- Orbit = Orbit-The International Journal on Orbital Disorders-Oculoplastic and Lacrimal Surgery? The only thing just orbit
+- Panminerva medica -> N/A For 2023 but 2022 was 3.6
+- Perfusion -> Old AF
+- Public health challenges
+- Research square
+- Surgical endoscopy = SURGICAL ENDOSCOPY AND OTHER INTERVENTIONAL TECHNIQUES
+- The American journal of cardiology
+- The American Journal of dermatopathology
+- The Journal of physiology -> A ton of different versions
+- The Lancet. Digital health
+- Trauma case reports
+- Turk patoloji dergisi
+- Viruses
+- World journal of clinical cases -> 2023
+- World journal of methodology -> Not found but their website says not available right now
 
-
-
-
+- bioRxiv -> unfound
+- International Academy for Clinical Hematology -> unfound
+- European journal of case reports in internal medicine -> unfound
+- Federal practitioner -> unfound
+- Wellcome open research -> unfound
+- Philosophical transactions of the Royal Society of London -> N/A -> says 2006 was last but on their website they list 4.7

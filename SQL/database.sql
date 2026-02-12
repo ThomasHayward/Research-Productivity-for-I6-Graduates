@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `journal` (
     `id` integer PRIMARY KEY AUTO_INCREMENT,
     `name` varchar(255),
     `specialty` varchar(255),
-    `avg_impact_factor` int,
-    `max_impact_factor` int,
+    `avg_impact_factor` VARCHAR(255),
+    `max_impact_factor` VARCHAR(255),
     `ranking` int
 );
 

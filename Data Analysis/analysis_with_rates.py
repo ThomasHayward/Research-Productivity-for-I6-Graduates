@@ -9,6 +9,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import pyodbc
 import seaborn as sns
 import statsmodels.api as sm
 from scipy import stats
@@ -151,6 +152,129 @@ def analyze_publication_rates(csv_file, output_dir):
                 f.write(f"Effect Size (Cohen's d) IF: {cohens_d_if:.3f}\n\n")
             else:
                 f.write("Not enough data for IF statistical comparison.\n\n")
+            
+            # NEW SECTION: Journal-level IF analysis
+            if 'total_pubs' in df.columns and 'pubs_with_valid_if' in df.columns and 'pubs_without_if' in df.columns:
+                f.write("\n" + "=" * 80 + "\n")
+                f.write("JOURNAL-LEVEL IMPACT FACTOR ANALYSIS\n")
+                f.write("=" * 80 + "\n\n")
+                
+                # Calculate totals across all residents
+                total_pubs = df['total_pubs'].sum()
+                pubs_with_valid_if = df['pubs_with_valid_if'].sum()
+                pubs_without_if = df['pubs_without_if'].sum()
+                
+                f.write(f"Total publications across all residents: {total_pubs:.0f}\n")
+                f.write(f"Publications with valid numeric IF: {pubs_with_valid_if:.0f} ({100*pubs_with_valid_if/total_pubs:.1f}%)\n")
+                f.write(f"Publications without valid IF (N/A, N/F, or missing): {pubs_without_if:.0f} ({100*pubs_without_if/total_pubs:.1f}%)\n\n")
+                
+                # Query database for individual journal statistics
+                try:
+                    conn = pyodbc.connect('DRIVER={MySQL ODBC 9.3 ANSI Driver};SERVER=localhost;DATABASE=integrated_resident_project;UID=admin;')
+                    cursor = conn.cursor()
+                    
+                    # Get all journals with their impact factors and publication counts
+                    query = '''
+                        SELECT 
+                            j.id,
+                            j.name,
+                            j.avg_impact_factor,
+                            COUNT(p.id) AS pub_count
+                        FROM journal j
+                        LEFT JOIN publication p ON p.journal_id = j.id
+                        GROUP BY j.id, j.name, j.avg_impact_factor
+                        HAVING pub_count > 0
+                        ORDER BY j.avg_impact_factor DESC;
+                    '''
+                    cursor.execute(query)
+                    journals = cursor.fetchall()
+                    conn.close()
+                    
+                    # Parse journals into categories
+                    total_journals = len(journals)
+                    journals_na = 0
+                    journals_nf = 0
+                    journals_numeric = []
+                    
+                    for row in journals:
+                        journal_id, name, if_str, pub_count = row
+                        if if_str is None or if_str == '':
+                            journals_na += 1
+                        elif if_str.upper() in ('N/A', 'NA'):
+                            journals_na += 1
+                        elif if_str.upper() in ('N/F', 'NF'):
+                            journals_nf += 1
+                        else:
+                            # Try to parse as numeric
+                            try:
+                                if_val = float(if_str.replace('<', '').strip())
+                                journals_numeric.append(if_val)
+                            except:
+                                journals_na += 1
+                    
+                    f.write(f"Individual Journal Statistics:\n")
+                    f.write(f"  Total unique journals published in: {total_journals}\n")
+                    f.write(f"  Journals with N/A or missing IF: {journals_na} ({100*journals_na/total_journals:.1f}%)\n")
+                    f.write(f"  Journals with N/F (not found) IF: {journals_nf} ({100*journals_nf/total_journals:.1f}%)\n")
+                    f.write(f"  Journals with valid numeric IF: {len(journals_numeric)} ({100*len(journals_numeric)/total_journals:.1f}%)\n\n")
+                    
+                    if len(journals_numeric) > 0:
+                        f.write(f"  Average IF across all journals: {np.mean(journals_numeric):.2f}\n")
+                        f.write(f"  Median IF: {np.median(journals_numeric):.2f}\n")
+                        f.write(f"  Range: {min(journals_numeric):.2f} - {max(journals_numeric):.2f}\n\n")
+                        
+                        f.write("Distribution of Journals by Impact Factor:\n")
+                        f.write("-" * 40 + "\n")
+                        
+                        if_bins = [
+                            ('<1', lambda x: x < 1),
+                            ('1-2', lambda x: 1 <= x < 2),
+                            ('2-3', lambda x: 2 <= x < 3),
+                            ('3-7', lambda x: 3 <= x < 7),
+                            ('7-10', lambda x: 7 <= x < 10),
+                            ('10+', lambda x: x >= 10),
+                        ]
+                        
+                        for label, condition in if_bins:
+                            count = sum(1 for x in journals_numeric if condition(x))
+                            pct = 100 * count / len(journals_numeric)
+                            f.write(f"  IF {label}: {count} journals ({pct:.1f}%)\n")
+                        
+                        f.write("\n")
+                    
+                except Exception as e:
+                    f.write(f"Could not retrieve journal statistics from database: {str(e)}\n\n")
+                
+                # Calculate average IF weighted by publication count
+                residents_with_if = df[df['avg_if'].notna()].copy()
+                if len(residents_with_if) > 0:
+                    # Weighted average: sum(avg_if * pubs_with_valid_if) / sum(pubs_with_valid_if)
+                    weighted_avg_if = (residents_with_if['avg_if'] * residents_with_if['pubs_with_valid_if']).sum() / residents_with_if['pubs_with_valid_if'].sum()
+                    f.write(f"Weighted average IF across all resident publications: {weighted_avg_if:.2f}\n")
+                    f.write(f"  (weighted by number of publications per resident)\n\n")
+                
+                # Distribution of resident average IFs
+                f.write("Distribution of Resident Average Impact Factors:\n")
+                f.write("-" * 40 + "\n")
+                
+                all_avg_ifs = df[df['avg_if'].notna()]['avg_if']
+                
+                if len(all_avg_ifs) > 0:
+                    if_bins = [
+                        ('<1', lambda x: x < 1),
+                        ('1-2', lambda x: 1 <= x < 2),
+                        ('2-3', lambda x: 2 <= x < 3),
+                        ('3-7', lambda x: 3 <= x < 7),
+                        ('7-10', lambda x: 7 <= x < 10),
+                        ('10+', lambda x: x >= 10),
+                    ]
+                    
+                    for label, condition in if_bins:
+                        count = sum(condition(x) for x in all_avg_ifs)
+                        pct = 100 * count / len(all_avg_ifs) if len(all_avg_ifs) > 0 else 0
+                        f.write(f"  IF {label}: {count} residents ({pct:.1f}%)\n")
+                    
+                    f.write("\n")
         
         # Statistical tests on RATES
         f.write("\n" + "=" * 80 + "\n")
@@ -341,8 +465,11 @@ def create_rate_visualizations(df, output_dir):
 
 
 if __name__ == "__main__":
+    # Get the script's directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
     # Update these paths as needed
-    csv_file = "new_post_residency_with_if.csv"  # Joined with resident_avg_if.csv
-    output_dir = "analysis"
+    csv_file = os.path.join(script_dir, "new_post_residency_with_if.csv")
+    output_dir = os.path.join(script_dir, "analysis")
     
     analyze_publication_rates(csv_file, output_dir)

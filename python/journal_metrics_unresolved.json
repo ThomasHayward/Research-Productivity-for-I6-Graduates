@@ -2,321 +2,385 @@
   {
     "journal_id": 477,
     "requested_name": "American journal of health-system pharmacy : official journal of the American Society of Health-System Pharmacists",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.6"
   },
   {
     "journal_id": 486,
     "requested_name": "American journal of orthodontics and dentofacial orthopedics : official publication of the American Association of Orthodontists, its constituent societies, and the American Board of Orthodontics",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.3"
   },
   {
     "journal_id": 447,
     "requested_name": "American journal of perinatology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.5"
   },
   {
     "journal_id": 558,
     "requested_name": "American journal of physiology. Cell physiology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "5.4"
   },
   {
     "journal_id": 48,
     "requested_name": "American journal of physiology. Renal physiology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.9"
   },
   {
     "journal_id": 167,
     "requested_name": "American journal of surgery",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.6"
   },
   {
     "journal_id": 170,
     "requested_name": "American journal of transplantation : official journal of the American Society of Transplantation and the American Society of Transplant Surgeons",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.3"
   },
   {
     "journal_id": 635,
     "requested_name": "Analytical biochemistry",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.7"
   },
   {
     "journal_id": 642,
     "requested_name": "Anesthesia and analgesia",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "4.8"
   },
   {
     "journal_id": 324,
     "requested_name": "Applied radiation and isotopes : including data, instrumentation and methods for use in agriculture, industry and medicine",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.6"
   },
   {
     "journal_id": 102,
     "requested_name": "Archives of clinical neuropsychology : the official journal of the National Academy of Neuropsychologists",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.6"
   },
   {
     "journal_id": 461,
     "requested_name": "bioRxiv : the preprint server for biology",
-    "reason": "timeout/no_results"
+    "reason": "timeout/no_results",
+    "if_5year": "N/F"
   },
   {
     "journal_id": 261,
     "requested_name": "Blood coagulation & fibrinolysis : an international journal in haemostasis and thrombosis",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.0"
   },
   {
     "journal_id": 539,
     "requested_name": "Canadian Association of Radiologists journal = Journal l'Association canadienne des radiologistes",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.2"
   },
   {
     "journal_id": 630,
     "requested_name": "Canadian Urological Association journal = Journal de l'Association des urologues du Canada",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.9"
   },
   {
     "journal_id": 147,
     "requested_name": "Cardiovascular pathology : the official journal of the Society for Cardiovascular Pathology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.1"
   },
   {
     "journal_id": 128,
     "requested_name": "Catheterization and cardiovascular interventions : official journal of the Society for Cardiac Angiography & Interventions",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.1"
   },
   {
     "journal_id": 458,
     "requested_name": "Cell",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "48.8"
   },
   {
     "journal_id": 160,
     "requested_name": "Circulation journal : official journal of the Japanese Circulation Society",
-    "reason": "timeout/no_results"
+    "reason": "timeout/no_results",
+    "if_5year": "3.6"
   },
   {
     "journal_id": 584,
     "requested_name": "Clinical and applied thrombosis/hemostasis : official journal of the International Academy of Clinical and Applied Thrombosis/Hemostasis",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.3"
   },
   {
     "journal_id": 349,
     "requested_name": "Clinical and translational science",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.6"
   },
   {
     "journal_id": 383,
     "requested_name": "Clinical cancer research : an official journal of the American Association for Cancer Research",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "11.2"
   },
   {
     "journal_id": 561,
     "requested_name": "Clinical gastroenterology and hepatology : the official clinical practice journal of the American Gastroenterological Association",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "11.7"
   },
   {
     "journal_id": 176,
     "requested_name": "Clinical hematology international",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "N/F"
   },
   {
     "journal_id": 412,
     "requested_name": "Clinical research in cardiology : official journal of the German Cardiac Society",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.7"
   },
   {
     "journal_id": 552,
     "requested_name": "Dermatologic surgery : official publication for American Society for Dermatologic Surgery [et al.]",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.7"
   },
   {
     "journal_id": 671,
     "requested_name": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.5"
   },
   {
     "journal_id": 129,
     "requested_name": "European heart journal. Cardiovascular Imaging",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.2"
   },
   {
     "journal_id": 127,
     "requested_name": "European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.4"
   },
   {
     "journal_id": 281,
     "requested_name": "European journal of case reports in internal medicine",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "N/F"
   },
   {
     "journal_id": 427,
     "requested_name": "European journal of heart failure",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "13.5"
   },
   {
     "journal_id": 46,
     "requested_name": "European journal of neurology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "4.5"
   },
   {
     "journal_id": 184,
     "requested_name": "European journal of oncology nursing : the official journal of European Oncology Nursing Society",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "3.4"
   },
   {
     "journal_id": 312,
     "requested_name": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "4.4"
   },
   {
     "journal_id": 28,
     "requested_name": "European journal of preventive cardiology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "7.6"
   },
   {
     "journal_id": 180,
     "requested_name": "Federal practitioner : for the health care professionals of the VA, DoD, and PHS",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "N/F"
   },
   {
     "journal_id": 475,
     "requested_name": "Folia phoniatrica et logopaedica : official organ of the International Association of Logopedics and Phoniatrics (IALP)",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.2"
   },
   {
     "journal_id": 459,
     "requested_name": "Food chemistry",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "9.7"
   },
   {
     "journal_id": 570,
     "requested_name": "Health promotion and chronic disease prevention in Canada : research, policy and practice",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.9"
   },
   {
     "journal_id": 135,
     "requested_name": "HeartRhythm case reports",
-    "reason": "timeout/no_results"
+    "reason": "timeout/no_results",
+    "if_5year": "5.3"
   },
   {
     "journal_id": 53,
     "requested_name": "Hip international : the journal of clinical and experimental research on hip pathology and therapy",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.8"
   },
   {
     "journal_id": 667,
     "requested_name": "Indian journal of urology : IJU : journal of the Urological Society of India",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.1"
   },
   {
     "journal_id": 357,
     "requested_name": "Infection, genetics and evolution : journal of molecular epidemiology and evolutionary genetics in infectious diseases",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.5"
   },
   {
     "journal_id": 541,
     "requested_name": "Information systems frontiers : a journal of research and innovation",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "7.8"
   },
   {
     "journal_id": 669,
     "requested_name": "International braz j urol : official journal of the Brazilian Society of Urology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.9"
   },
   {
     "journal_id": 373,
     "requested_name": "Interventional neuroradiology : journal of peritherapeutic neuroradiology, surgical procedures and related neurosciences",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.0"
   },
   {
     "journal_id": 327,
     "requested_name": "Investigative radiology",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.5"
   },
   {
     "journal_id": 637,
     "requested_name": "Journal of applied biomaterials & functional materials",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "3.3"
   },
   {
     "journal_id": 66,
     "requested_name": "Journal of chromatography. B, Analytical technologies in the biomedical and life sciences",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.8"
   },
   {
     "journal_id": 111,
     "requested_name": "JTCVS open",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "2.2"
   },
   {
     "journal_id": 348,
     "requested_name": "Microbiology resource announcements",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "0.6"
   },
   {
     "journal_id": 631,
     "requested_name": "Modern pathology : an official journal of the United States and Canadian Academy of Pathology, Inc",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.4"
   },
   {
     "journal_id": 448,
     "requested_name": "NPJ biofilms and microbiomes",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "9.9"
   },
   {
     "journal_id": 152,
     "requested_name": "Philosophical transactions of the Royal Society of London. Series B, Biological sciences",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "4.7"
   },
   {
     "journal_id": 124,
     "requested_name": "Proceedings of the National Academy of Sciences of the United States of America",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "10.6"
   },
   {
     "journal_id": 178,
     "requested_name": "Radiographics : a review publication of the Radiological Society of North America, Inc",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "7.3"
   },
   {
     "journal_id": 529,
     "requested_name": "RSC advances",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "4.3"
   },
   {
     "journal_id": 260,
     "requested_name": "Seminars in thoracic and cardiovascular surgery. Pediatric cardiac surgery annual",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.1"
   },
   {
     "journal_id": 380,
     "requested_name": "Texas Heart Institute journal",
-    "reason": "timeout/no_results"
+    "reason": "timeout/no_results",
+    "if_5year": "1.0"
   },
   {
     "journal_id": 6,
     "requested_name": "The British journal of general practice : the journal of the Royal College of General Practitioners",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "6.3"
   },
   {
     "journal_id": 583,
     "requested_name": "The International journal of angiology : official publication of the International College of Angiology, Inc",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "1.1"
   },
   {
     "journal_id": 599,
     "requested_name": "Transplant international : official journal of the European Society for Organ Transplantation",
-    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)"
+    "reason": "error: HTTPConnectionPool(host='localhost', port=57048): Read timed out. (read timeout=120)",
+    "if_5year": "2.9"
   },
   {
     "journal_id": 481,
     "requested_name": "Vaccines",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "3.7"
   },
   {
     "journal_id": 512,
     "requested_name": "Wellcome open research",
-    "reason": "parse_failed"
+    "reason": "parse_failed",
+    "if_5year": "N/F"
   }
 ]

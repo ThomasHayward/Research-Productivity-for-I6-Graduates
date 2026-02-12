@@ -1,1 +1,0 @@
-Pearson correlation between During Residency and Post Residency: r = 0.484, p = 2.328e-06
